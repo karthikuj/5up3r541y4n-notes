@@ -1,0 +1,110 @@
+So this is supposed to be a practice file for vi. In this file, I will add many exercises for the reader to practice upon.
+
+Task 1:
+Move around the document using movement keys. (j, k, h, l)
+
+Task 2:
+Go to the start and end of different lines many times.
+
+Task 3:
+Move forward and backward one word.
+Move to the end of the word.
+
+Task 4:
+Move forward one sentence.
+Move backward one sentence.
+Move forward one paragraph.
+Move backward one paragraph.
+
+Task 5:
+Move to the top of the screen.
+Move to the bottom of the screen.
+Move to the middle of the screen.
+
+Task 6:
+Go to previous navigation location.
+Go to where you were before.
+
+Task 7:
+Find "dogs" in the line below and go to next instance of "dogs" too, try to do it with both 'f' and 't':
+Who let the dogs out. woof woof woof. Seriously though, who let the dogs out?
+
+Task 8:
+Go to line number 9
+
+Task 9:
+insert "are" after "how" below:
+How you?
+
+Task 10:
+Append "How about you?" in the line below:
+I'm good. 
+
+Task 11:
+Open a line below me and one above me, I like to get sandwiched :)
+
+Task 12:
+There are two typos in the line beneath me, fix them appropriately.
+So the perk Chad tried to give me a dollar the other day, I mean who does that?
+
+Task 13:
+Change the content in tags to "Safe link"
+<a href="https://evil.com">Get rekt</a>
+
+Task 14:
+Change stuff quotes to "Every jutsu has a weakness":
+"Yeah, burn in hell bois. AMATERASU!!" ~Itachi the G.O.A.T
+
+Task 15:
+Delete the line below:
+Garbage line, hata do, mujhe kya :(
+
+Task 16:
+Remove the character insetrted by mistake without going into INSERT MODE:
+Important line make shure to make no mistakes.
+
+Task 17:
+Delete the paragraph below:
+
+First line of paragraph.
+Second line of paragraph.
+Third line of paragraph.
+
+Task 19:
+Copy the first word and paste it just after it.
+twinkle little star!
+
+Task 20:
+Copy this line and paste it again.
+
+Task 21:
+Replace all "Elliot" to "Alderson"
+Replace "Jaya" to "Daya" in the line below.
+Kuch to gadbad hai Jaya, kuch to gadbad haiiii.
+FSociety called they want Elliot back.
+
+Task 22:
+Insert '-' in the below lines using repetition.
+Add a hyphen on this line.
+One here too.
+Keep one for me too pls.
+Ayy bro give me a hyphen too.
+Damn das sum good shit. *bites lips*
+
+Task 23:
+change if block to someFunc();
+for(int i = 0; i < 10; i++) {
+  if(i % 2) {
+    cout << "helo";
+  }
+}
+
+Task 24:
+Prepend a colon in every line below this except the last one.
+Give me that COLONoscopy doc
+Hey give me one too
+give me one too
+give me one too
+what the dawg doin
+
+Secret check by Elliot to see if you cheated.
