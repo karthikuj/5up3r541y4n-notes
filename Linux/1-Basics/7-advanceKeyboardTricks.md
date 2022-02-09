@@ -7,7 +7,7 @@
 - `CTRL+B` - Move cursor one character backward; same as left arrow key.
 - `ALT+F` - Move cursor forward one word.
 - `ALT+B` - Move cursor backward one word.
-- `CTRL+L` - Clear the screen; same as `clear`
+- `CTRL+L` - Clear the screen; similar to `clear`
 
 ## Modifying text
 - `CTRL+D` - Delete the character at cursor location.
