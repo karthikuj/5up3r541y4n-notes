@@ -1,0 +1,708 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Vi · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="12-customizingOurPrompt.html" />
+    
+    
+    <link rel="prev" href="10-environment.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Author
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Linux</li>
+        
+        
+    
+
+    
+        
+        <li class="header">Basics</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="1-exploring.html">
+            
+                <a href="1-exploring.html">
+            
+                    
+                    Exploring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="2-navigation.html">
+            
+                <a href="2-navigation.html">
+            
+                    
+                    Navigation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="3-manipulatingFilesAndDirectories.html">
+            
+                <a href="3-manipulatingFilesAndDirectories.html">
+            
+                    
+                    Manipulating files and directories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="4-workingWithCommands.html">
+            
+                <a href="4-workingWithCommands.html">
+            
+                    
+                    Working with commands
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="5-redirection.html">
+            
+                <a href="5-redirection.html">
+            
+                    
+                    Redirection
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="6-expansionsAndQuotes.html">
+            
+                <a href="6-expansionsAndQuotes.html">
+            
+                    
+                    Expansions and quotes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="7-advanceKeyboardTricks.html">
+            
+                <a href="7-advanceKeyboardTricks.html">
+            
+                    
+                    Advance keyboard tricks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="8-permissions.html">
+            
+                <a href="8-permissions.html">
+            
+                    
+                    Permissions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" data-path="9-processes.html">
+            
+                <a href="9-processes.html">
+            
+                    
+                    Processes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.10" data-path="10-environment.html">
+            
+                <a href="10-environment.html">
+            
+                    
+                    Environment
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.11" data-path="11-vi.html">
+            
+                <a href="11-vi.html">
+            
+                    
+                    Vi
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.12" data-path="12-customizingOurPrompt.html">
+            
+                <a href="12-customizingOurPrompt.html">
+            
+                    
+                    Prompt cutomization
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tasks and tools</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../2-TasksAndTools/1-packagingSystems.html">
+            
+                <a href="../2-TasksAndTools/1-packagingSystems.html">
+            
+                    
+                    Packaging systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../2-TasksAndTools/2-storageMedia.html">
+            
+                <a href="../2-TasksAndTools/2-storageMedia.html">
+            
+                    
+                    Storage media
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../2-TasksAndTools/3-networking.html">
+            
+                <a href="../2-TasksAndTools/3-networking.html">
+            
+                    
+                    Networking
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Vi</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="learn-to-use-and-exit-vi">Learn to use and exit vi</h1>
+<h2 id="exit-vim">Exit vim</h2>
+<ul>
+<li>To exit vi, use this command: <code>:q</code>.</li>
+<li>If you made changes and want to quit without saving: <code>:q!</code></li>
+</ul>
+<h2 id="editing-modes">Editing modes</h2>
+<ul>
+<li>When vi starts, it begins in command mode.</li>
+<li>To add some text to our file, we must first enter insert mode.</li>
+<li>To do this, we press the <code>i</code> key.</li>
+<li>To exit insert mode and return to command mode, press the <code>esc</code> key.</li>
+</ul>
+<h2 id="saving-our-work">Saving Our Work</h2>
+<ul>
+<li>In command mode type: <code>:w</code></li>
+<li>To save and exit type: <code>:wq</code></li>
+<li>A faster way to do <code>:wq</code> is <code>ZZ</code></li>
+<li><code>:saveas ~/some/path/</code>: save your file to that location.</li>
+<li>if vim was opened wiithout any file as argument use <code>:x filename</code> to save it with a filename in pwd.</li>
+</ul>
+<h2 id="verbs">Verbs</h2>
+<ul>
+<li>Verbs are action words.</li>
+<li><code>d</code>: delete</li>
+<li><code>c</code>: change</li>
+<li><code>y</code>: yank (copy)</li>
+<li><code>v</code>: visually select (V for line)</li>
+</ul>
+<h2 id="modifiers">Modifiers</h2>
+<ul>
+<li>Modifiers are used before nouns to describe the way in which you&apos;re going to do something.</li>
+<li><code>i</code>: inside</li>
+<li><code>a</code>: around</li>
+<li>The difference between &quot;inside&quot; and &quot;around&quot; an object is whether it gets the spaces next to it as well.</li>
+<li><code>&lt;NUM&gt;</code>: number (e.g.:1, 2, 10)</li>
+<li><code>t</code>: searches for a string and stops before it.</li>
+<li><code>T</code>: searches for a string backwards and stops before it.</li>
+<li><code>f</code>: searches for a string and lands on it.</li>
+<li><code>F</code>: searches for a string backwards and lands on it.</li>
+<li><code>/</code>: find a string (literal or regex).</li>
+</ul>
+<h2 id="nouns">Nouns</h2>
+<ul>
+<li><code>w</code>: word</li>
+<li><code>s</code>: sentence</li>
+<li><code>)</code>: sentence (another way of doing it).</li>
+<li><code>p</code>: paragraph</li>
+<li><code>}</code>: paragraph (another way of doing it).</li>
+<li><code>t</code>: tag (think HTML/XML)</li>
+<li><code>b</code>: block (think programming)</li>
+</ul>
+<h2 id="building-commands-using-nouns-verbs-and-modifiers">Building commands using nouns, verbs and modifiers</h2>
+<ul>
+<li>Delete 2 words: <code>d2w</code></li>
+<li>Change inside sentence (delete the current one and enter insert mode): <code>cis</code></li>
+<li>Yank inside paragraph (copy the paragraph you&apos;re in): <code>yip</code></li>
+<li>Change to period (change text from where you&apos;re at tothe next period): <code>ct.</code></li>
+</ul>
+<h2 id="searching-for-text">Searching for text</h2>
+<ul>
+<li>The most basic way to search in vim is like this: <code>/&lt;stringToSearch&gt;</code> + <code>ENTER</code></li>
+<li>To go to the next occurence of the string press <code>n</code>.</li>
+<li>To go to the previous occurence of the string press <code>N</code>.</li>
+<li>To search backwards use <code>?</code> instead of <code>/</code>: <code>?&lt;stringToSearch&gt;</code> + <code>ENTER</code></li>
+</ul>
+<h2 id="jumping-to-certain-characters-these-work-only-on-the-same-line-youre-on">Jumping to certain characters (these work only on the same line you&apos;re on).</h2>
+<ul>
+<li>Jump forward and land on <code>&lt;</code> character: <code>f&lt;</code></li>
+<li>Jump forward and land just before <code>&lt;</code> character: <code>t&lt;</code></li>
+<li>Use <code>;</code> to go to the next instance when you&apos;ve jumped to a character</li>
+<li>Use <code>,</code> to go to the previous instance when you&apos;ve jumped to a character</li>
+</ul>
+<h2 id="moving-around-in-your-text">Moving around in your text</h2>
+<ul>
+<li>Basic motions:<ul>
+<li><code>j</code>: Move down one line, can be made to skip multiple lines using modifiers. Example: <code>2j</code></li>
+<li><code>k</code>: Move up one line.</li>
+<li><code>h</code>: Move left one character.</li>
+<li><code>l</code>: Move right one character.</li>
+</ul>
+</li>
+<li>Moving within the line:<ul>
+<li><code>0</code>: Move to the beginning of the line.</li>
+<li><code>$</code>: Move to the end of the line.</li>
+<li><code>^</code>: Move to the first non-blank character in the line.</li>
+</ul>
+</li>
+<li>Moving by word:<ul>
+<li><code>w</code>: Move forward one word.</li>
+<li><code>b</code>: Move back one word.</li>
+<li><code>e</code>: Move to the end of your word.</li>
+</ul>
+</li>
+<li>Moving by sentence/paragraph:<ul>
+<li><code>)</code>: Move forward one sentence.</li>
+<li><code>(</code>: Move backward one sentence.</li>
+<li><code>}</code>: Move forward one paragraph.</li>
+<li><code>{</code>: Move backward one paragraph.</li>
+</ul>
+</li>
+<li>Moving within the screen:<ul>
+<li><code>H</code>: Move to the top of the screen.</li>
+<li><code>M</code>: Move to the middle of the screen.</li>
+<li><code>L</code>: Move to the bottom of the screen.</li>
+<li><code>gg</code>: Go to the top of the file.</li>
+<li><code>G</code>: Go to the bottom of the file.</li>
+<li><code>^U</code>: Move up half a screen.</li>
+<li><code>^D</code>: Move down half a screen.</li>
+<li><code>^F</code>: Page down.</li>
+<li><code>^B</code>: Page up.</li>
+</ul>
+</li>
+<li>Jumping back and forth:<ul>
+<li><code>CTRL-i</code>: jump to your previous navigation location.</li>
+<li><code>CTRL-o</code>: jump back to where you were.</li>
+</ul>
+</li>
+<li>Other motions:<ul>
+<li><code>&lt;lineNumber&gt;</code> + <code>SHIFT+g</code>: move to a given line number.</li>
+<li><code>:&lt;lineNumber&gt;</code>: move to the given line number.</li>
+<li><code>^E</code>: scroll up one line</li>
+<li><code>^Y</code>: scroll down one line</li>
+</ul>
+</li>
+</ul>
+<h2 id="understanding-modes">Understanding modes</h2>
+<p><img src="../Images/vim_modes.webp" alt="Change modes" title="Change Modes"></p>
+<ul>
+<li>Normal mode: This is the mode you start in, also known as command mode you can run commands in it.</li>
+<li>Insert mode: This is where you make changes to the file.</li>
+<li>Visual mode: This is mode where you can select text and do some powerful operations on it.</li>
+<li>Ex mode: This is where you get a <code>:</code> prompt, and you can enter commands. You can run some powerful command-line stuff from there.</li>
+</ul>
+<h2 id="basic-changeinsert-operations">Basic change/insert operations</h2>
+<ul>
+<li><code>i</code>: <i>insert</i> before the cursor.</li>
+<li><code>a</code>: <i>append</i> after the cursor.</li>
+<li><code>I</code>: <i>insert</i> at the beginning if the line.</li>
+<li><code>A</code>: <i>append</i> at the end of the line.</li>
+<li><code>o</code>: <i>open</i> a new line below the current line.</li>
+<li><code>O</code>: <i>open</i> a new line above the current one.</li>
+<li><code>r</code>: <i>replace</i> the once character under your cursor.</li>
+<li><code>R</code>: <i>replace</i> the character under your cursor but just keep typing afterwards.</li>
+<li><code>c&lt;m&gt;</code>: <i>change</i> whatever you define as a movement, e.g. a word, or a sentence, or a paragraph.</li>
+<li><code>C</code>: <i>change</i> the current line from where you&apos;re at.</li>
+<li><code>s</code>: <i>substitute</i> from where you are to the next command (noun).</li>
+<li><code>S</code>: <i>substitute</i> the entire current line.</li>
+</ul>
+<h2 id="changing-case">Changing case:</h2>
+<ul>
+<li>You can change case using <code>~</code>.</li>
+<li>It works on the letter under the cursor or on a selection.</li>
+</ul>
+<h2 id="deleting-text">Deleting text</h2>
+<ul>
+<li><code>x</code>: <i>exterminate</i> (delete) the character under the cursor.</li>
+<li><code>X</code>: <i>exterminate</i> (delete) the character before the cursor.</li>
+<li><code>d&lt;m&gt;</code>: delete whatever you define as a movement, e.g. a word, or a sentence, or a paragraph.</li>
+<li><code>dd</code>: <i>delete</i> the current line.</li>
+<li><code>dt</code>: <i>delete</i> delete from where you are to be period.</li>
+<li><code>D</code>: <i>delete</i> to the end of the line.</li>
+<li><code>J</code>: <i>join</i> the current line with the next one(delete what&apos;s between).</li>
+</ul>
+<h2 id="undo-and-redo">Undo and redo</h2>
+<ul>
+<li><code>u</code>: undo</li>
+<li><code>CTRL+r</code>: redo</li>
+</ul>
+<h2 id="repeating-actions">Repeating actions</h2>
+<ul>
+<li>You can use <code>.</code> to repeat your last action.</li>
+<li>Delete a word: <code>dw</code></li>
+<li>Repeat above action 5 times: <code>5.</code></li>
+</ul>
+<h2 id="copying-and-pasting">Copying and pasting</h2>
+<ul>
+<li><code>y</code>: yank (copy) from where you are to the next command (noun).</li>
+<li><code>yy</code>: a shortcut for copying the current line.</li>
+<li><code>p</code>: paste the copied (or deleted) text after the current cursor position.</li>
+<li><code>P</code>: paste the copied (or deleted) text before the current cursor position.</li>
+</ul>
+<h2 id="substitution">Substitution</h2>
+<ul>
+<li>Change <code>foo</code> to <code>bar</code> on every line: <code>:%s /foo/bar/g</code></li>
+<li>Change <code>foo</code> to <code>bar</code> on just the current line: <code>:s /foo/bar/g</code></li>
+</ul>
+<h2 id="making-things-repeatable">Making things repeatable</h2>
+<ul>
+<li>So let&apos;s say that you&apos;re adding a bit of text to the end of multiple lines, but you&apos;re only doing it where the line contains a certain string. You can accomplish that like so:</li>
+<li>Search for the string: <code>/delhi</code></li>
+<li>Now, whenever you press the <code>n</code> key you&apos;ll teleport to the next instance of &quot;delhi&quot;. So, starting at the first one, we&apos;re going to append some text.</li>
+<li>Append some text to the end of the line: <code>A[has good street food][ESC]</code></li>
+<li>Go to the next instance and append the text to the line: <code>n.</code></li>
+</ul>
+<h2 id="text-objects">Text objects</h2>
+<ul>
+<li>Word text objects<ul>
+<li><code>iw</code>: inside a word.</li>
+<li><code>aw</code>: around a word.</li>
+<li>Examples:<ul>
+<li>Delete a word: <code>daw</code></li>
+<li>Change inside word: <code>ciw</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Sentence text objects<ul>
+<li><code>is</code>: inside sentence.</li>
+<li><code>as</code>: around sentence.</li>
+<li>Example:<ul>
+<li>Change around sentence: <code>cas</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>More object types:<ul>
+<li>paragraphs: <code>ip</code> and <code>ap</code></li>
+<li>single quotes: <code>i&apos;</code> and <code>a&apos;</code></li>
+<li>double quotes: <code>i&quot;</code> and <code>a&quot;</code></li>
+<li>back tics: <code>i` </code> and <code>a` </code></li>
+<li>paranthesis: <code>i(</code> and <code>a(</code></li>
+<li>brackets: <code>i[</code> and <code>a[</code></li>
+<li>braces: <code>i{</code> and <code>a{</code></li>
+<li>tags: <code>it</code> and <code>at</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="visual-mode">Visual mode</h2>
+<ul>
+<li>Perhaps the best thing to say about Visual Mode is that it magnifies the power of everything you&apos;ve learned so far. It does this by allowing you to apply commands to the text that&apos;s currently highlighted.</li>
+<li>Entering the visual mode:<ul>
+<li><code>v</code>: character based.</li>
+<li><code>V</code>: line based.</li>
+<li><code>CTRL+v</code>: paragraphs</li>
+</ul>
+</li>
+<li>Often time you&apos;ll be inside some content that is surrounded on both sides by something, such as <code>,</code> <code>.</code> <code>(</code> <code>{</code> <code>[</code>. You can visually select these things by issuing commands like these:</li>
+<li>Select inside of parenthesis: <code>vi(</code></li>
+<li>Select around brackets: <code>va[</code></li>
+<li>You can also add a number to that to select two levels out (if you&apos;re inside a nested set).</li>
+<li>Select everything inside the second tier braces: <code>v2i{</code></li>
+</ul>
+<h2 id="actions-you-can-perform-on-visually-selected-text">Actions you can perform on visually selected text</h2>
+<ul>
+<li>It&apos;s really your choice, but the most common operations are simply deletion, copy, and paste.</li>
+<li><code>vwwy</code>: Enter visual mode, select two more words of text and copy them.</li>
+<li><code>v6wy</code>: Enter visual mode, select 6 words and copy them.</li>
+<li><code>Vjjd</code>: Enter line-based visual mode and delete a couple of lines below.</li>
+<li><code>vip</code>: Visually select an entire paragraph.</li>
+<li><code>vipyjjp</code> Visually select an entire paragraph then paste it down below.</li>
+</ul>
+<h2 id="combining-visual-mode-with-repetition">Combining visual mode with repetition</h2>
+<ul>
+<li>If we want to prepend a colon in front of every line, you can simply put one in front of the first line, visually select all the lines below it, and then hit the <code>.</code> key.</li>
+</ul>
+<h2 id="macros">Macros</h2>
+<ul>
+<li>They are used to record EVERYTHING you do and then doing it again when you replay. Here&apos;s a simple reference:</li>
+<li><code>qa</code>: start recording a macro named &quot;a&quot;</li>
+<li><code>q</code>: stop recording</li>
+<li><code>@a</code>: play back the macro.</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="10-environment.html" class="navigation navigation-prev " aria-label="Previous page: Environment">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="12-customizingOurPrompt.html" class="navigation navigation-next " aria-label="Next page: Prompt cutomization">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Vi","level":"3.11","depth":1,"next":{"title":"Prompt cutomization","level":"3.12","depth":1,"path":"Linux/1-Basics/12-customizingOurPrompt.md","ref":"./Linux/1-Basics/12-customizingOurPrompt.md","articles":[]},"previous":{"title":"Environment","level":"3.10","depth":1,"path":"Linux/1-Basics/10-environment.md","ref":"./Linux/1-Basics/10-environment.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Linux/1-Basics/11-vi.md","mtime":"2022-02-09T18:23:06.341Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-09T18:29:05.436Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

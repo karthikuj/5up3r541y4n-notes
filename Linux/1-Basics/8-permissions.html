@@ -1,0 +1,627 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Permissions · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="9-processes.html" />
+    
+    
+    <link rel="prev" href="7-advanceKeyboardTricks.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Author
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Linux</li>
+        
+        
+    
+
+    
+        
+        <li class="header">Basics</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="1-exploring.html">
+            
+                <a href="1-exploring.html">
+            
+                    
+                    Exploring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="2-navigation.html">
+            
+                <a href="2-navigation.html">
+            
+                    
+                    Navigation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="3-manipulatingFilesAndDirectories.html">
+            
+                <a href="3-manipulatingFilesAndDirectories.html">
+            
+                    
+                    Manipulating files and directories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="4-workingWithCommands.html">
+            
+                <a href="4-workingWithCommands.html">
+            
+                    
+                    Working with commands
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="5-redirection.html">
+            
+                <a href="5-redirection.html">
+            
+                    
+                    Redirection
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="6-expansionsAndQuotes.html">
+            
+                <a href="6-expansionsAndQuotes.html">
+            
+                    
+                    Expansions and quotes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="7-advanceKeyboardTricks.html">
+            
+                <a href="7-advanceKeyboardTricks.html">
+            
+                    
+                    Advance keyboard tricks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.8" data-path="8-permissions.html">
+            
+                <a href="8-permissions.html">
+            
+                    
+                    Permissions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" data-path="9-processes.html">
+            
+                <a href="9-processes.html">
+            
+                    
+                    Processes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.10" data-path="10-environment.html">
+            
+                <a href="10-environment.html">
+            
+                    
+                    Environment
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.11" data-path="11-vi.html">
+            
+                <a href="11-vi.html">
+            
+                    
+                    Vi
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.12" data-path="12-customizingOurPrompt.html">
+            
+                <a href="12-customizingOurPrompt.html">
+            
+                    
+                    Prompt cutomization
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tasks and tools</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../2-TasksAndTools/1-packagingSystems.html">
+            
+                <a href="../2-TasksAndTools/1-packagingSystems.html">
+            
+                    
+                    Packaging systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../2-TasksAndTools/2-storageMedia.html">
+            
+                <a href="../2-TasksAndTools/2-storageMedia.html">
+            
+                    
+                    Storage media
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../2-TasksAndTools/3-networking.html">
+            
+                <a href="../2-TasksAndTools/3-networking.html">
+            
+                    
+                    Networking
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Permissions</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="properly-manage-file-permissions">Properly manage file permissions</h1>
+<h2 id="checking-file-permissions">Checking file permissions</h2>
+<ul>
+<li>You can use long list view of <code>ls</code> command to checkout a file&apos;s permissions.</li>
+<li>Usage: <code>ls -l filepath</code></li>
+<li>Example:<ul>
+<li><code>ls -l someSecretFile.txt</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="id---display-user-identity">id - Display user identity</h2>
+<ul>
+<li>This is command is used to check the user id and group ids a user is associated with.</li>
+<li>Usage: <code>id [USER]</code></li>
+<li>Examples:<ul>
+<li><code>id</code> (When you use the command without any username, it will default to current user)</li>
+<li><code>id heisenberg</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="chmod---change-file-mode">chmod - Change file mode</h2>
+<ul>
+<li>This command is used to alter the permissions of a file (can only be done by file/dir owner or superuser).</li>
+<li>Usage: <code>chmod permissions filePath</code></li>
+<li><p>Ways of specifying file permissions:</p>
+<ul>
+<li><p>Octal number representation:</p>
+<ul>
+<li>If we want to set <code>rwx</code> then all 3 bits have to be set, so the binary for that would be 111, if we want to convert that into octal we can mutiply the each digit by 2^(n-1) and add them. Then divide the result by 8, note the remainder. Now repeat last two steps with the new quotient till the quotient is 0. Then write the found remainders in reverse order. But since in permissions you cannot go beyond octal 7, no need to do divide steps.</li>
+<li>Example: <ul>
+<li><code>rwx</code> would become 111 which would be (1<em>(2^2) + 1</em>(2^1) + 1*(2^0)) = 7</li>
+<li><code>rw-</code> would become 110 which would be (1<em>(2^2) + 1</em>(2^1) + 0*(2^0)) = 6</li>
+<li><code>r-x</code> would become 101 which would be (1<em>(2^2) + 0</em>(2^1) + 1*(2^0)) = 5</li>
+<li><code>---</code> would become 000 which would be (0<em>(2^2) + 0</em>(2^1) + 0*(2^0)) = 0</li>
+</ul>
+</li>
+<li>Tip: <ul>
+<li>Instead of doing 2^(n-1) you can simple remember these numbers-&gt; 4, 2, 1</li>
+<li>So 4 is for <code>r</code>, 2 is for <code>w</code> and 1 is for <code>x</code>.</li>
+<li>If you want <code>r-x</code> you can simply add the required numbers, 4+1 = 5.</li>
+</ul>
+</li>
+<li>Examples:<ul>
+<li><code>chmod 777 secret.txt</code></li>
+<li><code>chmod 600 secretFile.txt</code></li>
+<li><code>chmod 755 impDir/</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Symbolic representation:</p>
+<ul>
+<li>It specifies who the change will affect, what operation would be performed and what permissions will be set.</li>
+<li>To specify who use <code>u</code>, <code>g</code>, <code>o</code> or <code>a</code>:<ul>
+<li><code>u</code> - Stands for user basically the file owner</li>
+<li><code>g</code> - Group owner</li>
+<li><code>o</code> - Others</li>
+<li><code>a</code> - All (default)</li>
+</ul>
+</li>
+<li>The operation performed can be <code>-</code>, <code>+</code> or <code>=</code>:<ul>
+<li><code>-</code> - To remove certain permissions.</li>
+<li><code>+</code> - To add certain permissions.</li>
+<li><code>=</code> - To specify certain permissions to be applied and remove the other permissions.</li>
+</ul>
+</li>
+<li>To specify the permissions that will be set use <code>r</code>, <code>w</code> or <code>x</code>:<ul>
+<li><code>r</code> - Read</li>
+<li><code>w</code> - Write</li>
+<li><code>x</code> - Execute</li>
+</ul>
+</li>
+<li>Examples:<ul>
+<li><code>chmod u+x file</code></li>
+<li><code>chmod u-w joeMama.txt</code></li>
+<li><code>chmod +x notImpFile.sh</code></li>
+<li><code>chmod o-rw someFile.dat</code></li>
+<li><code>chmod go=rw tbbt.mp4</code></li>
+<li><code>chmod u+x,go=rx trojan.horse</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="umask---set-default-permissions">umask - Set default permissions</h2>
+<ul>
+<li>It is used to set the default permissions of the file when it is first created.</li>
+<li>Usage: <code>umask maskToApply</code></li>
+<li>By default the mask is set to <code>0002</code> or <code>0022</code>. So in case of <code>0022</code> files have permission set to <code>rw-r--r--</code> by default.</li>
+<li>So if we set the mask to <code>0000</code>, we will notice that the files created after that will have <code>rw-rw-rw-</code> permissions (This is without any mask i.e. 0000).</li>
+<li>Reason: <ul>
+<li>Convert all bits of <code>0022</code> to 3 digit binary, you get (000 000 010 010).</li>
+<li><code>--- rw- rw- rw-</code> Without mask</li>
+<li><code>000 000 010 010</code> Mask(<code>0022</code>) </li>
+<li><code>--- rw- r-- r--</code> Result</li>
+<li>So we can see that the mask removes the permissions from the bits that are set.</li>
+</ul>
+</li>
+</ul>
+<h2 id="special-permissions">Special permissions</h2>
+<ul>
+<li>Setuid bit (octal 4000), if this is applied to an executable file, it changes the effective user ID from that of the real user (the user actually running the program) to that of the program&#x2019;s owner. This allows the program to access files and directories that an ordinary user would normally be prohibited
+from accessing.</li>
+<li>Setgid bit (octal 2000), it changes the effective group ID from the real group ID of the real
+user to that of the file owner. If the setgid bit is set on a directory, newly created files in the directory will be given the group ownership of the directory rather the group ownership of the file&#x2019;s creator.</li>
+<li>Sticky bit (octal 1000), if applied to a directory, it prevents users from deleting or renaming files unless the user is either the owner of the directory, the owner of the file, or the superuser. This is often used to control access to a shared directory, such as /tmp.</li>
+<li>Examples:<ul>
+<li>Setuid bit: <code>chmod u+s program</code></li>
+<li>Setgid bit: <code>chmod g+s dir</code></li>
+<li>Sticky bit: <code>chmod +t dir</code></li>
+</ul>
+</li>
+<li>SUID bits don&apos;t work on shell scripts (bohot time kharab kara iske upar)</li>
+</ul>
+<h2 id="su---run-a-shell-with-substitute-user-and-group-ids">su - Run a Shell with Substitute User and Group IDs</h2>
+<ul>
+<li>It is used to start a shell as another user.</li>
+<li>Usage: <code>su [user]</code></li>
+<li>You can jump straight into the user&apos;s working directory after logging in by using <code>-l</code> flag.</li>
+<li><code>-l</code> is also abbreviated as <code>-</code></li>
+<li>Execute a single a command using the <code>-c</code> flag.</li>
+<li>Examples:<ul>
+<li><code>su -l heisenberg</code></li>
+<li><code>su -c &apos;ls -al&apos;</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="sudo---execute-a-command-as-another-user">sudo - Execute a Command As Another User</h2>
+<ul>
+<li>This command can be used to execute a command as a different user (usually the superuser)</li>
+<li>Usage: <code>sudo command</code></li>
+<li>Use <code>-i</code> to start an interactive shell as superuser.</li>
+<li>Use <code>-l</code> flag to check privileges granted by sudo.</li>
+<li>Examples:<ul>
+<li><code>sudo rm -rf --no-preserve-root /</code> (don&apos;t run this hehe)</li>
+<li><code>sudo ls -al /root</code></li>
+<li><code>sudo -i</code></li>
+<li><code>sudo -l</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="chown---change-file-owner-and-group">chown - Change File Owner and Group</h2>
+<ul>
+<li>It is used to change the owner and group owner of a file or directory</li>
+<li>Usage: <code>chown [owner][:[group]] file...</code></li>
+<li>Arguments:<ul>
+<li><code>levi</code> - changes the file owner to <code>levi</code>.</li>
+<li><code>levi:ackermann</code> - changes the file owner to <code>levi</code> and file group owner to <code>ackermann</code>.</li>
+<li><code>:ackermann</code> - changes the file group owner to <code>ackermann</code>.</li>
+<li><code>levi:</code> - changes the file owner to <code>levi</code> and changes the group owner to the login group of user <code>levi</code></li>
+</ul>
+</li>
+<li>Examples:<ul>
+<li><code>sudo chown levi testFile</code></li>
+<li><code>sudo chown levi:ackermann testFile</code></li>
+<li><code>sudo chown :ackermann testFile</code></li>
+<li><code>sudo chown levi: testFile</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="chgrp---change-group-ownership">chgrp - Change Group Ownership</h2>
+<ul>
+<li>This command is used to change group ownership of a file. This can now be done using <code>chown</code> but in older systems <code>chgrp</code> was used.</li>
+<li>Usage: <code>chgrp group file</code></li>
+<li>Example:<ul>
+<li><code>chgrp ackermann testFile</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="passwd---used-to-change-passwords">passwd - Used to change passwords</h2>
+<ul>
+<li>This command is used to change the password of a user.</li>
+<li>Usage: <code>passwd user</code></li>
+<li>If you run it without <code>user</code> argument then it will default to current user.</li>
+<li>Examples:<ul>
+<li><code>passwd</code></li>
+<li><code>passwd levi</code></li>
+</ul>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="7-advanceKeyboardTricks.html" class="navigation navigation-prev " aria-label="Previous page: Advance keyboard tricks">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="9-processes.html" class="navigation navigation-next " aria-label="Next page: Processes">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Permissions","level":"3.8","depth":1,"next":{"title":"Processes","level":"3.9","depth":1,"path":"Linux/1-Basics/9-processes.md","ref":"./Linux/1-Basics/9-processes.md","articles":[]},"previous":{"title":"Advance keyboard tricks","level":"3.7","depth":1,"path":"Linux/1-Basics/7-advanceKeyboardTricks.md","ref":"./Linux/1-Basics/7-advanceKeyboardTricks.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Linux/1-Basics/8-permissions.md","mtime":"2022-02-09T18:23:06.337Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-09T18:29:05.436Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

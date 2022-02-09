@@ -1,0 +1,544 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Processes · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="10-environment.html" />
+    
+    
+    <link rel="prev" href="8-permissions.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Author
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Linux</li>
+        
+        
+    
+
+    
+        
+        <li class="header">Basics</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="1-exploring.html">
+            
+                <a href="1-exploring.html">
+            
+                    
+                    Exploring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="2-navigation.html">
+            
+                <a href="2-navigation.html">
+            
+                    
+                    Navigation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="3-manipulatingFilesAndDirectories.html">
+            
+                <a href="3-manipulatingFilesAndDirectories.html">
+            
+                    
+                    Manipulating files and directories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="4-workingWithCommands.html">
+            
+                <a href="4-workingWithCommands.html">
+            
+                    
+                    Working with commands
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="5-redirection.html">
+            
+                <a href="5-redirection.html">
+            
+                    
+                    Redirection
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="6-expansionsAndQuotes.html">
+            
+                <a href="6-expansionsAndQuotes.html">
+            
+                    
+                    Expansions and quotes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="7-advanceKeyboardTricks.html">
+            
+                <a href="7-advanceKeyboardTricks.html">
+            
+                    
+                    Advance keyboard tricks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="8-permissions.html">
+            
+                <a href="8-permissions.html">
+            
+                    
+                    Permissions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.9" data-path="9-processes.html">
+            
+                <a href="9-processes.html">
+            
+                    
+                    Processes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.10" data-path="10-environment.html">
+            
+                <a href="10-environment.html">
+            
+                    
+                    Environment
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.11" data-path="11-vi.html">
+            
+                <a href="11-vi.html">
+            
+                    
+                    Vi
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.12" data-path="12-customizingOurPrompt.html">
+            
+                <a href="12-customizingOurPrompt.html">
+            
+                    
+                    Prompt cutomization
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tasks and tools</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../2-TasksAndTools/1-packagingSystems.html">
+            
+                <a href="../2-TasksAndTools/1-packagingSystems.html">
+            
+                    
+                    Packaging systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../2-TasksAndTools/2-storageMedia.html">
+            
+                <a href="../2-TasksAndTools/2-storageMedia.html">
+            
+                    
+                    Storage media
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../2-TasksAndTools/3-networking.html">
+            
+                <a href="../2-TasksAndTools/3-networking.html">
+            
+                    
+                    Networking
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Processes</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="manage-all-processes">Manage all processes</h1>
+<h2 id="ps">ps</h2>
+<ul>
+<li>This command is used to view processes running on the system.</li>
+<li>Usage: <code>ps [arguments]</code></li>
+<li>Examples:<ul>
+<li><code>ps</code> (Shows list of processes associated with the current terminal session)</li>
+<li><code>ps aux</code> (This is popular set of options, used to view all running processes regardless if it is or it is not associated with the current terminal session)</li>
+</ul>
+</li>
+</ul>
+<h2 id="top">top</h2>
+<ul>
+<li>It is used to view a continuously updating list of top processes sorted by CPU activity.</li>
+<li>Usage: <code>top [arguments]</code></li>
+<li>Example:<ul>
+<li><code>top</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="interrupting-a-program">Interrupting a program</h2>
+<ul>
+<li>In a terminal, pressing <code>CTRL+C</code> interrupts a program.</li>
+<li>Many (but not all) command line programs can be interrupted by using this technique.</li>
+</ul>
+<h2 id="jobs">jobs</h2>
+<ul>
+<li>Using this we can list the jobs that have been launched from our terminal.</li>
+<li>We can also check the job numbers of the programs.</li>
+<li>Usage: <code>jobs [arguments]</code></li>
+</ul>
+<h2 id="bg---backgrounding-a-process">bg - Backgrounding a process</h2>
+<ul>
+<li>Check the job number using the <code>jobs</code> command.</li>
+<li>Usage: <code>bg %[jobNumber]</code></li>
+<li>Example:<ul>
+<li><code>bg %1</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="fg---foregrounding-a-process">fg - Foregrounding a process</h2>
+<ul>
+<li>Check the job number using <code>jobs</code> command.</li>
+<li>Usage: <code>fg %[jobNumber]</code></li>
+<li>Example:<ul>
+<li><code>fg %1</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="stopping-pausing-a-process">Stopping (Pausing) a Process</h2>
+<ul>
+<li>To stop a foreground process and place it in the background, press <code>CTRL+Z</code>.</li>
+</ul>
+<h2 id="kill">kill</h2>
+<ul>
+<li>This command is used to send signals to programs, if no signal is mentioned the default signal is TERM (terminate).</li>
+<li>Usage: <code>kill -signal PID...</code></li>
+<li>Common signals:<ul>
+<li>1 (HUP) - The signal is used to indicate to programs that the controlling terminal has &#x201C;hung up.&#x201D;</li>
+<li>2 (INT) - Interrupt. This performs the same function as <code>CTRL+C</code> sent from the terminal. It will usually terminate a program.</li>
+<li>9 (KILL) - KILL. The signal is not sent to the process, infact the kernel immediately terminates  the program.</li>
+<li>15 (TERM) - Terminate. This is the default signal sent by the kill command. If a program is still &#x201C;alive&#x201D; enough to receive signals, it will terminate.</li>
+<li>18 (CONT) - Continue. This will restore a process after a STOP or TSTP signal. This signal is sent by the bg and fg commands.</li>
+<li>19 (STOP) - Stop. This signal causes a process to pause without terminating. Like the KILL signal, it is not sent to the target process, and thus it cannot be ignored.</li>
+<li>20 (TSTP) - Terminal stop. This is the signal sent by the terminal when <code>CTRL+Z</code> is pressed. Unlike the STOP signal, the TSTP signal is received by the program, but the program may choose to ignore it.</li>
+</ul>
+</li>
+<li>Note that signals may be specified either by number or by name, including the name prefixed with the letters SIG.</li>
+<li>Examples:<ul>
+<li><code>kill -1 13546</code></li>
+<li><code>kill -INT 13601</code></li>
+<li><code>kill -SIGINT 13601</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="killall">killall</h2>
+<ul>
+<li>It is used to send signals to multiple processes matching a specified program or username.</li>
+<li>Usage: <code>killall [-u user] [-signal] name...</code></li>
+<li>Example:<ul>
+<li><code>killall python</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="reboot">reboot</h2>
+<ul>
+<li>Used to reboot your device.</li>
+<li>Usage: <code>sudo reboot</code></li>
+</ul>
+<h2 id="shutdown">shutdown</h2>
+<ul>
+<li>With this we can specify which of the actions to perform (halt, power down, or reboot) and provide a time delay to the shutdown event.</li>
+<li>Usage: <code>sudo shutdown [arguments]</code></li>
+<li>Examples:<ul>
+<li><code>sudo shutdown -h now</code></li>
+<li><code>sudo shutdown -r now</code></li>
+</ul>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="8-permissions.html" class="navigation navigation-prev " aria-label="Previous page: Permissions">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="10-environment.html" class="navigation navigation-next " aria-label="Next page: Environment">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Processes","level":"3.9","depth":1,"next":{"title":"Environment","level":"3.10","depth":1,"path":"Linux/1-Basics/10-environment.md","ref":"./Linux/1-Basics/10-environment.md","articles":[]},"previous":{"title":"Permissions","level":"3.8","depth":1,"path":"Linux/1-Basics/8-permissions.md","ref":"./Linux/1-Basics/8-permissions.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Linux/1-Basics/9-processes.md","mtime":"2022-02-09T18:23:06.337Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-09T18:29:05.436Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
