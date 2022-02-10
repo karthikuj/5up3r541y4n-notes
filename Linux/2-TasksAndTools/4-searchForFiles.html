@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Packaging systems · GitBook</title>
+        <title>Searching for files · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="2-storageMedia.html" />
     
-    
-    <link rel="prev" href="../1-Basics/12-customizingOurPrompt.html" />
+    <link rel="prev" href="3-networking.html" />
     
 
     </head>
@@ -279,7 +277,7 @@
         
         
     
-        <li class="chapter active" data-level="4.1" data-path="1-packagingSystems.html">
+        <li class="chapter " data-level="4.1" data-path="1-packagingSystems.html">
             
                 <a href="1-packagingSystems.html">
             
@@ -318,7 +316,7 @@
             
         </li>
     
-        <li class="chapter " data-level="4.4" data-path="4-searchForFiles.html">
+        <li class="chapter active" data-level="4.4" data-path="4-searchForFiles.html">
             
                 <a href="4-searchForFiles.html">
             
@@ -361,7 +359,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Packaging systems</a>
+        <a href="../.." >Searching for files</a>
     </h1>
 </div>
 
@@ -376,140 +374,48 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="manage-system-packages">Manage system packages</h1>
-<h2 id="major-packaging-system-families">Major packaging system families</h2>
+                                <h1 id="find-what-you-need-with-ease">Find what you need with ease</h1>
+<h2 id="locate---find-files-the-easy-way">locate - Find files the easy way</h2>
 <ul>
-<li>Debian style (<code>.deb</code>) - Debian, Ubuntu, Linux Mint, Raspbian</li>
-<li>Red Hat style (<code>.rpm</code>) - Fedora, CentOs, Red Hat, OpenSUSE</li>
+<li>locate has a database of pathnames through which we can search for files.</li>
+<li>The locate database is created by another program called updatedb.</li>
+<li>Usage: <code>locate [OPTIONS] searchString</code></li>
+<li>Examples:<ul>
+<li><code>locate bin/zip</code> (This will try to find all files that begin with &quot;zip&quot; in the bin/ directory)</li>
+<li><code>locate zip | grep bin</code> </li>
 </ul>
-<h2 id="packaging-system-tools">Packaging system tools</h2>
+</li>
+</ul>
+<h2 id="find---find-files-the-hard-way">find - Find files the hard way</h2>
 <ul>
-<li>Debian style:<ul>
-<li>Low level: <code>dpkg</code></li>
-<li>High level: <code>apt-get</code>, <code>apt</code>, <code>aptitude</code></li>
+<li>find command can be used for finding files in directory.</li>
+<li>The real power of find comes when we use it to find very specific files using different options, tests and actions.</li>
+<li>Usage: <code>find directory [OPTIONS]</code></li>
+<li>Tests<ul>
+<li>We can use <code>-type</code> flag to specify the type of file we want to find. Types of files:<ul>
+<li><code>d</code> - directories</li>
+<li><code>f</code> - regular files</li>
+<li><code>b</code> - block special device file</li>
+<li><code>c</code> - character special device file</li>
+<li><code>l</code> - symbolic link</li>
 </ul>
 </li>
-<li>Red Hat style:<ul>
-<li>Low level: <code>rpm</code></li>
-<li>High level: <code>yum</code>, <code>dnf</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="finding-a-package-in-a-repository">Finding a package in a repository</h2>
-<ul>
-<li>Debian:<ul>
-<li><code>apt-cache search &lt;searchString&gt;</code></li>
-<li><code>apt search &lt;searchString&gt;</code></li>
-</ul>
-</li>
-<li>Red Hat:<ul>
-<li><code>yum search &lt;searchString&gt;</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="installing-a-package-from-a-repository">Installing a package from a repository</h2>
-<ul>
-<li>Debian:<ul>
-<li><code>apt-get install &lt;packageName&gt;</code></li>
-<li><code>apt install &lt;packageName&gt;</code></li>
-</ul>
-</li>
-<li>Red Hat:<ul>
-<li><code>yum install &lt;packageName&gt;</code></li>
+<li>We can use the <code>-name</code> flag to find files that match that name or pattern</li>
+<li>We can use the <code>size</code> flag to find files that are larger, smaller or equal to the specified size. A leading <code>+</code> size indicates larger, <code>-</code> indicates smaller and no sign indicates exact match. The trailing character indicates the unit of measurement. Unit symbols:<ul>
+<li><code>b</code> - 512-byte blocks. This is the default if no unit is specified.</li>
+<li><code>c</code> - bytes</li>
+<li><code>w</code> - 2-byte words</li>
+<li><code>k</code> - kilobytes</li>
+<li><code>M</code> - Megabytes</li>
+<li><code>G</code> - Gigabytes</li>
 </ul>
 </li>
 </ul>
-<h2 id="installing-package-from-a-package-file">Installing package from a package file</h2>
-<ul>
-<li>Debian:<ul>
-<li><code>dpkg -i &lt;packageFile&gt;</code></li>
-</ul>
-</li>
-<li>Red Hat:<ul>
-<li><code>rpm -i &lt;packageFile&gt;</code></li>
-</ul>
 </li>
 </ul>
-<h2 id="removing-a-package">Removing a package</h2>
-<ul>
-<li>Debian:<ul>
-<li><code>apt-get remove &lt;packageName&gt;</code></li>
-<li><code>apt remove &lt;packageName&gt;</code></li>
-</ul>
-</li>
-<li>Red Hat:<ul>
-<li><code>yum erase &lt;packageName&gt;</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="updating-packages-from-a-repository">Updating packages from a repository</h2>
-<ul>
-<li>Debian:<ul>
-<li><code>apt-get update &amp;&amp; apt-get upgrade</code></li>
-<li><code>apt update &amp;&amp; apt upgrade</code></li>
-</ul>
-</li>
-<li>Red Hat:<ul>
-<li><code>yum update</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="upgrading-package-from-a-package-file">Upgrading package from a package file</h2>
-<ul>
-<li>Debian:<ul>
-<li><code>dpkg -i &lt;packageFile&gt;</code></li>
-</ul>
-</li>
-<li>Red Hat:<ul>
-<li><code>rpm -U &lt;packageFile&gt;</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="listing-installed-packages">Listing installed packages</h2>
-<ul>
-<li>Debian:<ul>
-<li><code>dpkg -l</code></li>
-</ul>
-</li>
-<li>Red Hat:<ul>
-<li><code>rpm -qa</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="determining-whether-a-package-is-installed">Determining whether a package is installed</h2>
-<ul>
-<li>Debian:<ul>
-<li><code>dpkg -s &lt;packageName&gt;</code></li>
-</ul>
-</li>
-<li>Red Hat:<ul>
-<li><code>rpm -q &lt;packageName&gt;</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="displaying-information-about-an-installed-package">Displaying information about an installed package</h2>
-<ul>
-<li>Debian:<ul>
-<li><code>apt-cache show &lt;packageName&gt;</code></li>
-<li><code>apt show &lt;packageName&gt;</code></li>
-</ul>
-</li>
-<li>Red Hat:<ul>
-<li><code>yum info &lt;packageName&gt;</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="finding-which-package-installed-a-file">Finding which package installed a file</h2>
-<ul>
-<li>Debian:<ul>
-<li><code>dpkg -S &lt;file&gt;</code></li>
-</ul>
-</li>
-<li>Red Hat:<ul>
-<li><code>rpm -qf &lt;file&gt;</code></li>
-</ul>
-</li>
-</ul>
+<h2 id="xargs---build-and-execute-command-lines-from-standard-input">xargs - Build and execute command lines from standard input</h2>
+<h2 id="touch---manipulate-file-times">touch - Manipulate file times</h2>
+<h2 id="stat---display-file-or-file-system-status">stat - Display file or file system status</h2>
 
                                 
                                 </section>
@@ -537,14 +443,10 @@
 
             
                 
-                <a href="../1-Basics/12-customizingOurPrompt.html" class="navigation navigation-prev " aria-label="Previous page: Prompt cutomization">
+                <a href="3-networking.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Networking">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="2-storageMedia.html" class="navigation navigation-next " aria-label="Next page: Storage media">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -553,7 +455,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Packaging systems","level":"4.1","depth":1,"next":{"title":"Storage media","level":"4.2","depth":1,"path":"Linux/2-TasksAndTools/2-storageMedia.md","ref":"./Linux/2-TasksAndTools/2-storageMedia.md","articles":[]},"previous":{"title":"Prompt cutomization","level":"3.12","depth":1,"path":"Linux/1-Basics/12-customizingOurPrompt.md","ref":"./Linux/1-Basics/12-customizingOurPrompt.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Linux/2-TasksAndTools/1-packagingSystems.md","mtime":"2022-02-10T16:54:53.034Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-10T16:58:24.483Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Searching for files","level":"4.4","depth":1,"previous":{"title":"Networking","level":"4.3","depth":1,"path":"Linux/2-TasksAndTools/3-networking.md","ref":"./Linux/2-TasksAndTools/3-networking.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Linux/2-TasksAndTools/4-searchForFiles.md","mtime":"2022-02-10T16:54:53.062Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-10T16:58:24.483Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
