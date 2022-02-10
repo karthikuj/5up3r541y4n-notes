@@ -22,3 +22,4 @@
   * [Packaging systems](./Linux/2-TasksAndTools/1-packagingSystems.md)
   * [Storage media](./Linux/2-TasksAndTools/2-storageMedia.md)
   * [Networking](./Linux/2-TasksAndTools/3-networking.md)
+  * [Searching for files](./Linux/2-TasksAndTools/4-searchForFiles.md)
