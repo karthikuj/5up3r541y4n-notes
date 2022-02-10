@@ -397,24 +397,93 @@ see asterisks.</li>
 <ul>
 <li>The ip program is a multipurpose network configuration tool that makes use of the full range of networking features available in modern Linux kernels.</li>
 <li>It replaces the earlier and now deprecated <code>ifconfig</code> program.</li>
+<li>You can deactivate or activate interfaces using <code>down</code> or <code>up</code>.</li>
 <li><a href="https://phoenixnap.com/kb/linux-ip-command-examples" target="_blank">IP command guide</a></li>
 <li>Example:<ul>
 <li><code>ip a</code></li>
+<li><code>ip link set dev eth0 up</code></li>
+<li><code>ip link set dev eth0 down</code></li>
 </ul>
 </li>
 </ul>
 <h2 id="ifconfig">ifconfig</h2>
+<ul>
+<li>Deprecated but still used by many, <code>ifconfig</code> command is used to configure the kernel-resident network interfaces.</li>
+<li>Usage: <code>ifconfig [...OPTIONS] [INTERFACE]</code></li>
+<li>You can activate or deactivate interfaces using <code>up</code> or <code>down</code> options.</li>
+<li>Examples:<ul>
+<li><code>ifconfig</code></li>
+<li><code>ifconfig wlan0</code></li>
+<li><code>ifconfig wlan0 down</code></li>
+<li><code>ifconfig wlan0 up</code></li>
+</ul>
+</li>
+</ul>
 <h2 id="iwconfig">iwconfig</h2>
+<ul>
+<li>Like <code>ifconfig</code>, <code>iwconfig</code> is also used to configure the kernel-resident network interfaces. But it is dedicated to wireless networking interfaces only.</li>
+<li>It is used to set the parameters of the network interface that are particular to the wireless operation like SSID, frequency etc.</li>
+<li>Usage: <code>iwconfig [INTERFACE] [OPTIONS]</code></li>
+<li>You can set operating mode of the device using <code>mode</code> option. The modes can be Ad-Hoc, Managed, Master, Repeater, Secondary, and Monitor.</li>
+<li>Examples:<ul>
+<li><code>iwconfig</code></li>
+<li><code>iwconfig wlan0 mode Monitor</code></li>
+<li><code>iwconfig wlan0 mode Managed</code></li>
+</ul>
+</li>
+</ul>
 <h2 id="netstat---print-network-connections-routing-tables-interface-statistics-masquerade-connections-and-multicast-memberships">netstat - Print network connections, routing tables, interface statistics, masquerade connections, and multicast memberships</h2>
 <ul>
 <li>The netstat program is used to examine various network settings and statistics.</li>
 <li>Using the <code>-ie</code> option, we can examine the network interfaces in our system.</li>
 <li>Using the <code>-r</code> option will display the kernel&#x2019;s network routing table.</li>
 </ul>
-<h2 id="ftp---internet-file-transfer-program">ftp - Internet file transfer program</h2>
+<h2 id="ftp---file-transfer-protocol">ftp - File Transfer Protocol</h2>
+<ul>
+<li>It is used to transfer files over a network.</li>
+<li>It is not secure as it sends account names and passwords in clear text.</li>
+<li>By default it runs on port 21.</li>
+<li>Usage: <code>ftp [fileserver]</code></li>
+<li>You can use <code>cd</code> inside FTP prompt to change the directory and <code>lcd</code> inside FTP prompt to change the local directory.</li>
+<li>Use <code>get</code> to download files to local system and <code>put</code> command to upload files to the server.</li>
+<li>To download multiple files from the server use the <code>mget</code> command.</li>
+<li>Example:<ul>
+<li><code>ftp ftp.ubuntu.com</code></li>
+</ul>
+</li>
+</ul>
 <h2 id="wget---non-interactive-network-downloader">wget - Non-interactive network downloader</h2>
-<h2 id="ssh---openssh-ssh-client-remote-login-program">ssh - OpenSSH SSH client (remote login program)</h2>
-<h2 id="scp">scp</h2>
+<ul>
+<li>It is used to download content from both web and FTP sites.</li>
+<li>Usage: <code>wget [OPTIONS] [URI]</code></li>
+<li>Example:<ul>
+<li><code>wget https://karthikuj.github.io/images/7uring.png</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="ssh---secure-shell">ssh - Secure SHell</h2>
+<ul>
+<li>It is a remote login and administration program.</li>
+<li>Before SSH, Telnet was used for the same purpose but it wasn&apos;t secure because the communication was in plaintext.</li>
+<li>By default in runs on port 22.</li>
+<li>Usage: <code>ssh [username@][server]</code></li>
+<li>You can also execute a single command on the system instead of opening a shell session like this - <code>ssh tim@avicii.com ls</code></li>
+<li>it is possible to launch and run an X client program (a graphical application) on a remote system and have its display appear on the local system, like so - <code>ssh -X remote-sys</code> and in the shell session that opens just start a GUI application such as <code>xload</code>. On some systems, you may need to use the <code>-Y</code> option rather than the <code>-X</code> option to do this.</li>
+</ul>
+<h2 id="scp---secure-copy">scp - Secure Copy</h2>
+<ul>
+<li>It is used to securely copy files between remote hosts and local hosts</li>
+<li>Usage:<ul>
+<li><code>scp source destination</code></li>
+<li><code>scp [username@][server:]path [username@][server:]path</code></li>
+</ul>
+</li>
+<li>Examples:<ul>
+<li><code>scp remote-sys:document.txt .</code></li>
+<li><code>scp bob@remote-sys:document.txt .</code></li>
+</ul>
+</li>
+</ul>
 
                                 
                                 </section>
@@ -454,7 +523,7 @@ see asterisks.</li>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Networking","level":"4.3","depth":1,"previous":{"title":"Storage media","level":"4.2","depth":1,"path":"Linux/2-TasksAndTools/2-storageMedia.md","ref":"./Linux/2-TasksAndTools/2-storageMedia.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Linux/2-TasksAndTools/3-networking.md","mtime":"2022-02-09T18:33:35.227Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-10T04:49:48.203Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Networking","level":"4.3","depth":1,"previous":{"title":"Storage media","level":"4.2","depth":1,"path":"Linux/2-TasksAndTools/2-storageMedia.md","ref":"./Linux/2-TasksAndTools/2-storageMedia.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Linux/2-TasksAndTools/3-networking.md","mtime":"2022-02-10T05:21:22.943Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-10T05:22:50.947Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
