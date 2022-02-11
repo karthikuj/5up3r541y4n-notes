@@ -410,12 +410,88 @@
 <li><code>G</code> - Gigabytes</li>
 </ul>
 </li>
+<li>We can use <code>-cmin</code> flag to match files or directories whose content or attributes were last modi-
+fied exactly n minutes ago, also every test with numerical value can be used with the <code>+</code>/<code>-</code> symbols as well.</li>
+<li>Use the <code>-cnewer</code> to find files/directories which are newer than the file passed as value to this flag.</li>
+<li><code>-iname</code> is like <code>name</code> but case-insensitive.</li>
+<li>We can use the <code>-mmin</code> flag to Match files or directories whose contents were last modified n minutes ago.</li>
+<li><code>-nouser</code> and <code>-nogroup</code> can be used to find files and directories that don&apos;t belong to a valid user and valid group respectively.</li>
+<li>Use <code>-perm</code> flag to find files which have permission set to the given value.</li>
+<li>With <code>-user</code> flag we can match files or directories belonging to user name . The user may be expressed by a username or by a numeric user ID.</li>
+</ul>
+</li>
+<li>Operators - These are used to form logical operations to match files<ul>
+<li><code>-and</code> - match if both tests are true. (shorthand version - <code>-a</code>)</li>
+<li><code>-or</code> - match if atleast one test is true. (shorthand version - <code>-o</code>)</li>
+<li><code>-not</code> - negate the test i.e. match if the test following the operator is false. (shorthand version <code>!</code>)</li>
+<li><code>()</code> - group test and operators together to form larger expressions. Since they are special characters they need to be escaped when used as arguments for a command.</li>
+</ul>
+</li>
+<li>Predefined Actions - We can use these to perform a specifc set of actions on the list of result we get from the find command.<ul>
+<li><code>-delete</code> - Delete the currently matching file.</li>
+<li><code>-ls</code> - Perform the equivalent of <code>ls -dils</code> on the matching file.</li>
+<li><code>-print</code> - Output the full pathname of the matching file to standard output. This is the default action if no other action is specified.</li>
+<li><code>-quit</code> - Quit once match hash been made.</li>
+</ul>
+</li>
+<li>User-Defined Actions - Other than the actions listed in predefined actions, we can also invoke arbitrary commands.<ul>
+<li><code>-exec</code> - It is used like this: <code>-exec &lt;command&gt; {} ;</code>, example: <code>-exec rm &apos;{}&apos; &apos;;&apos;</code>. Here <code>{}</code> is like a placeholder for the filepath <code>find</code> command found and since braces and semi-colons are special characters they need to be quoted or escaped.</li>
+<li><code>-ok</code> - Using this we can execute a user defined action interactively, in this the user is prompted before the action takes place. Usage is same as <code>-exec</code>.</li>
+<li>When we use <code>-exec</code> the command is executed for each of the files found. But sometimes we need to execute the command once with all the files found. In those cases we can replace the <code>;</code> in <code>-exec</code> with a <code>+</code> sign. Example: <code>find ~ -type f -name &apos;foo*&apos; -exec ls -l &apos;{}&apos; +</code></li>
+</ul>
+</li>
+<li>Unix-like systems allow embedded spaces (and even newlines!) in filenames. This causes problems for programs like <code>xargs</code> that construct argument lists for other programs. An embedded space will be treated as a delimiter. To solve this we cn use <code>-print0</code> in find command, which produces null-separated output</li>
+<li>Options - used to control the scope of a find search.<ul>
+<li><code>-depth</code> - Direct find to process a directory&#x2019;s files before the directory itself. This option is automatically applied when the -delete action is specified.</li>
+<li><code>-maxdepth levels</code> - Set the maximum number of levels that find will descend into a directory tree when performing tests and actions.</li>
+<li><code>-mindepth levels</code> - Set the minimum number of levels that find will descend into a directory tree before applying tests and actions.</li>
+<li><code>-mount</code> - Direct find not to traverse directories that are mounted on other file systems.</li>
+<li><code>-noleaf</code> - Direct find not to optimize its search based on the assumption that it is searching a
+Unix-like file system. This is needed when scanning DOS/Windows file systems and CD-ROMs.</li>
+</ul>
+</li>
+<li>Examples:<ul>
+<li><code>find ~</code></li>
+<li><code>find ~ | wc -l</code></li>
+<li><code>find ~ -type d</code></li>
+<li><code>find ~ -type f -user sup3r541y4n</code></li>
+<li><code>find ~ -type f -name &quot;*.JPG&quot; -size +1M</code></li>
+<li><code>find ~ \( -type f -not -perm 0600 \) -or \( -type d -not -perm 0700 \)</code></li>
+<li><code>find ~ -type f -name &apos;*.bak&apos; -delete</code></li>
+<li><code>find ~ -type f -name &apos;foo*&apos; -exec ls -l &apos;{}&apos; &apos;;&apos;</code></li>
 </ul>
 </li>
 </ul>
 <h2 id="xargs---build-and-execute-command-lines-from-standard-input">xargs - Build and execute command lines from standard input</h2>
+<ul>
+<li>This command takes input from stdin and turns it into an argument list for a specified command.</li>
+<li>the xargs command has the <code>--null</code> (or <code>-0</code> ) option, which accepts null-separated input. Useful when we use <code>print0</code> in find command.</li>
+<li>Example:<ul>
+<li><code>find ~ -type f -name &apos;foo*&apos; -print | xargs ls -l</code></li>
+</ul>
+</li>
+</ul>
 <h2 id="touch---manipulate-file-times">touch - Manipulate file times</h2>
+<ul>
+<li>Touch is used to manipulate timestamps of a file, like access time and modification time.</li>
+<li>If no option is specified it will just make an empty file.</li>
+<li>Usage: <code>touch [OPTIONS] [FILE]</code></li>
+<li>Examples:<ul>
+<li><code>touch file.dat</code></li>
+<li><code>touch -t 01301030 file.dat</code></li>
+<li><code>touch -d &quot;Nov 5&quot; file.dat</code></li>
+</ul>
+</li>
+</ul>
 <h2 id="stat---display-file-or-file-system-status">stat - Display file or file system status</h2>
+<ul>
+<li>The stat command reveals all that the system understands about a file and its attributes.</li>
+<li>Usage: <code>stat file</code></li>
+<li>Example:<ul>
+<li><code>stat file.dat</code></li>
+</ul>
+</li>
+</ul>
 
                                 
                                 </section>
@@ -455,7 +531,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Searching for files","level":"4.4","depth":1,"previous":{"title":"Networking","level":"4.3","depth":1,"path":"Linux/2-TasksAndTools/3-networking.md","ref":"./Linux/2-TasksAndTools/3-networking.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Linux/2-TasksAndTools/4-searchForFiles.md","mtime":"2022-02-10T16:54:53.062Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-10T16:58:24.483Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Searching for files","level":"4.4","depth":1,"previous":{"title":"Networking","level":"4.3","depth":1,"path":"Linux/2-TasksAndTools/3-networking.md","ref":"./Linux/2-TasksAndTools/3-networking.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Linux/2-TasksAndTools/4-searchForFiles.md","mtime":"2022-02-11T05:06:29.904Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-11T05:08:40.209Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
