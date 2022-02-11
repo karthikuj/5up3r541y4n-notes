@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Storage media · GitBook</title>
+        <title>Archiving and backup · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="3-networking.html" />
     
-    
-    <link rel="prev" href="1-packagingSystems.html" />
+    <link rel="prev" href="4-searchForFiles.html" />
     
 
     </head>
@@ -292,7 +290,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="4.2" data-path="2-storageMedia.html">
+        <li class="chapter " data-level="4.2" data-path="2-storageMedia.html">
             
                 <a href="2-storageMedia.html">
             
@@ -331,7 +329,7 @@
             
         </li>
     
-        <li class="chapter " data-level="4.5" data-path="5-archivingAndBackup.html">
+        <li class="chapter active" data-level="4.5" data-path="5-archivingAndBackup.html">
             
                 <a href="5-archivingAndBackup.html">
             
@@ -374,7 +372,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Storage media</a>
+        <a href="../.." >Archiving and backup</a>
     </h1>
 </div>
 
@@ -389,113 +387,100 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="managing-storage-media">Managing storage media</h1>
-<h2 id="mount---mount-a-file-system">mount - Mount a file system</h2>
+                                <h1 id="learn-how-to-compress-and-archive-your-files">Learn how to compress and archive your files</h1>
+<h2 id="gzip">gzip</h2>
 <ul>
-<li>The process of attaching a storage device to the file system tree is called mounting.</li>
-<li>Usage: <code>mount &lt;device&gt; &lt;mountPoint&gt;</code></li>
-<li>A file named <code>/etc/fstab</code> (short for file system table) lists the devices that are to be mounted at boot time.</li>
-<li>View a list of mounted file systems: <code>mount</code></li>
-<li>Use the <code>-t</code> flag to specify the file system type.</li>
+<li>The gzip program is used to compress one or more files. When executed, it replaces the original file with a compressed version of the original.</li>
+<li>Usage: <code>gzip [OPTION]... [FILE]...</code></li>
+<li>Use the <code>-c</code> flag to write on stdout, keep original files unchnged. With this we can redirect the output to a seperate file.</li>
+<li>Use the <code>-d</code> flag to uncompress files compressed using gzip. We can also use gunzip program for this.</li>
 <li>Examples:<ul>
-<li><code>mount</code></li>
-<li><code>mount /dev/sdb1 /mnt/myUSB</code></li>
-<li><code>mount -t iso9660 /dev/sdc /mnt/cdrom</code></li>
+<li><code>gzip file.txt</code></li>
+<li><code>gzip -c file.txt &gt; f.gz</code></li>
+<li><code>gzip -d file.txt.gz</code></li>
 </ul>
 </li>
 </ul>
-<h2 id="umount---umount-a-file-system">umount - Umount a file system</h2>
+<h2 id="gunzip">gunzip</h2>
 <ul>
-<li>The process of detaching the storage media from the file system tree is called unmounting.</li>
-<li>Usage: <code>umount &lt;device&gt;</code></li>
-<li>Always remember to umount your devices because, unmounting a device entails writing all the remaining data to the device so that it can be safely removed.</li>
-<li>Example:<ul>
-<li><code>umount /dev/sdb1</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="check-all-devices">Check all devices</h2>
-<ul>
-<li>You can check all the devices by listing the <code>/dev</code> directory.</li>
-</ul>
-<h2 id="tip">TIP</h2>
-<ul>
-<li>Using the <code>tail -f /var/log/messages</code> technique is a great way to watch what the system is doing in near real-time.</li>
-</ul>
-<h2 id="fdisk---manipulate-disk-partition-table">fdisk - Manipulate disk partition table</h2>
-<ul>
-<li>fdisk allows us to interact directly with disk-like devices at a very low level.</li>
-<li>Usage: <code>fdisk [arguments] [device]</code></li>
-<li>To view all devices: <code>sudo fdisk -l</code></li>
-<li>Unmount your device before working on it with fdisk.</li>
-<li>To see a list of the available partition types use <code>l</code> command after entering fdisk interactive mode.</li>
-<li>To change a partition&apos;s system id use <code>t</code> command in interactive mode.</li>
-<li>To write the changes use <code>w</code> command in interactive mode.</li>
+<li>It performs the same action as the <code>-d</code> flag in gzip. It is used to uncompress files compressed by gzip.</li>
+<li>Usage: <code>gunzip [OPTION]... [FILE]...</code></li>
+<li>Use the <code>-c</code> flag to write on stdout, keep original files unchnged. With this we can redirect the output to a seperate file.</li>
 <li>Examples:<ul>
-<li><code>sudo fdisk /dev/sdb</code></li>
+<li><code>gunzip file.txt.gz</code></li>
+<li><code>gunzip -c file.txt.gz &gt; file.dat</code></li>
 </ul>
 </li>
 </ul>
-<h2 id="mkfs---create-a-file-system">mkfs - Create a file system</h2>
+<h2 id="bzip2">bzip2</h2>
 <ul>
-<li>mkfs is short for make file system, it can create file systems in a variety of formats.</li>
-<li>Usage: <code>mkfs [arguments] [device]</code></li>
-<li>Use the <code>-t</code> flag to specify system type.</li>
+<li>The bzip2 program, by Julian Seward, is similar to gzip but uses a different compression algorithm that achieves higher levels of compression at the cost of compression speed.</li>
+<li>Usage: <code>bzip2 [flags and input files in any order]</code></li>
+<li>Use the <code>-d</code> flag to uncompress files compressed using bzip2. We can also use bunzip2 program for this.</li>
+<li>Use <code>-1</code> for fast compression.</li>
+<li>Use <code>-9</code> for best compression.</li>
+<li>Use the <code>-c</code> flag to write on stdout, keep original files unchnged. With this we can redirect the output to a seperate file.</li>
+<li>bzip2 also comes with the bzip2recover program, which will try to recover damaged .bz2 files.</li>
 <li>Examples:<ul>
-<li><code>sudo mkfs -t ext4 /dev/sdb1</code></li>
-<li><code>sudo mkfs -t vfat /dev/sdb1</code></li>
+<li><code>bzip2 -9 file.txt</code></li>
+<li><code>bzip2 -1 -c file.txt &gt; f.bz2</code></li>
+<li><code>bzip2 -d file.txt.bz2</code></li>
 </ul>
 </li>
 </ul>
-<h2 id="fsck---check-and-repair-system">fsck - Check and repair system</h2>
+<h2 id="bunzip2">bunzip2</h2>
 <ul>
-<li>It stands for &quot;file system check&quot; and is used to check the integrity of file systems and repair corrupt file systems.</li>
-<li>Usage: <code>sudo fsck [arguments] [device]</code></li>
+<li>It performs the same action as the <code>-d</code> flag in bzip2. It is used to uncompress files compressed by bzip2.</li>
+<li>Usage: <code>gunzip [OPTION]... [FILE]...</code></li>
+<li>Use the <code>-c</code> flag to write on stdout, keep original files unchnged. With this we can redirect the output to a seperate file.</li>
+<li>Examples:<ul>
+<li><code>bunzip2 file.txt.bz2</code></li>
+<li><code>bunzip2 -c file.txt.bz2 &gt; file.dat</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="archiving-files">Archiving files</h2>
+<ul>
+<li>Archiving is the process of gathering up many files and bundling them together into a single large file. </li>
+<li>Archiving is often done as part of system backups.</li>
+</ul>
+<h2 id="tar">tar</h2>
+<ul>
+<li>the tar program is the classic tool for archiving files. Its name, short for tape archive, reveals its roots as a tool for making backup tapes.</li>
+<li>Usage: <code>tar [options] pathname...</code></li>
+<li>Use the <code>-c</code> flag to create archives.</li>
+<li>Use the <code>-f</code> flag to specify the archive name.</li>
+<li>Use the <code>-t</code> flag to list the contents of an archive.</li>
+<li>Use the <code>-x</code> flag to extract all the files from the archive.</li>
+<li>Examples:<ul>
+<li><code>tar -cf archive.tar foo bar</code></li>
+<li><code>tar -tvf archive.tar</code></li>
+<li><code>tar -xf archive.tar</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="zip">zip</h2>
+<ul>
+<li>The zip program is both a compression tool and an archiver.</li>
+<li>Usage: <code>zip [options] zipfile file</code></li>
+<li>Use the <code>-r</code> flag for recursion.</li>
+<li>It is possible to pipe a list of filenames to zip via the <code>-@</code> option.</li>
+<li>Examples:<ul>
+<li><code>zip -r playground.zip playground</code></li>
+<li><code>find playground -name &quot;file-A&quot; | zip -@ file-A.zip</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="unzip">unzip</h2>
+<ul>
+<li>It is used to extract files from zip archive.</li>
+<li>Usage: <code>unzip [OPTIONS] ziparchive</code></li>
 <li>Example:<ul>
-<li><code>sudo fsck /dev/sdb1</code></li>
+<li><code>unzip test.zip</code></li>
 </ul>
 </li>
 </ul>
-<h2 id="dd---convert-and-copy-a-file">dd - Convert and copy a file</h2>
-<ul>
-<li>It copies blocks of data from one place to another. So it can be used to clone devices.</li>
-<li>Usage: <code>dd if=&lt;input_file&gt; of=&lt;output_file&gt; [bs=&lt;block_size&gt; [count=&lt;blocks&gt;]]</code></li>
-<li>Example:<ul>
-<li><code>dd if=/dev/sdb1 of=/home/carlos/flashDrive.iso</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="genisoimage-mkisofs---create-an-iso-9660-image-file">genisoimage (mkisofs) - Create an ISO 9660 image file</h2>
-<ul>
-<li>To create an ISO image file containing the contents of a directory, we use the genisoimage program.</li>
-<li>Usage: <code>genisoimage -o &lt;outputFile&gt; -R -J &lt;directory&gt;</code></li>
-<li>Example:<ul>
-<li><code>genisoimage -o cd-rom.iso -R -J ~/cd-rom-files</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="wodim-cdrecord---write-data-to-optical-storage-media">wodim (cdrecord) - Write data to optical storage media</h2>
-<ul>
-<li>Blank out a CD-RW device: <code>wodim dev=/dev/cdrw blank=fast</code></li>
-<li>Write an image into it: <code>wodim dev=/dev/cdrw image.iso</code></li>
-</ul>
-<h2 id="md5sum---calculate-an-md5-checksum">md5sum - Calculate an MD5 checksum</h2>
-<ul>
-<li>Used to calculate the MD5 checksum of a file.</li>
-<li>Usage: <code>md5sum &lt;file&gt;</code></li>
-<li>Examples: <code>md5sum secretFile.txt</code></li>
-</ul>
-<h2 id="df---disk-free">df - disk free</h2>
-<ul>
-<li>It is used to check the total and available space.</li>
-<li>Usage: <code>df [options]</code></li>
-<li>Use the <code>-h</code> flag to view the space in human readable format.</li>
-<li>Example:<ul>
-<li><code>df</code></li>
-<li><code>df -h</code></li>
-</ul>
-</li>
-</ul>
+<h2 id="rsync">rsync</h2>
 
                                 
                                 </section>
@@ -523,14 +508,10 @@
 
             
                 
-                <a href="1-packagingSystems.html" class="navigation navigation-prev " aria-label="Previous page: Packaging systems">
+                <a href="4-searchForFiles.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Searching for files">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="3-networking.html" class="navigation navigation-next " aria-label="Next page: Networking">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -539,7 +520,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Storage media","level":"4.2","depth":1,"next":{"title":"Networking","level":"4.3","depth":1,"path":"Linux/2-TasksAndTools/3-networking.md","ref":"./Linux/2-TasksAndTools/3-networking.md","articles":[]},"previous":{"title":"Packaging systems","level":"4.1","depth":1,"path":"Linux/2-TasksAndTools/1-packagingSystems.md","ref":"./Linux/2-TasksAndTools/1-packagingSystems.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Linux/2-TasksAndTools/2-storageMedia.md","mtime":"2022-02-11T19:28:57.904Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-11T19:32:21.394Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Archiving and backup","level":"4.5","depth":1,"previous":{"title":"Searching for files","level":"4.4","depth":1,"path":"Linux/2-TasksAndTools/4-searchForFiles.md","ref":"./Linux/2-TasksAndTools/4-searchForFiles.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Linux/2-TasksAndTools/5-archivingAndBackup.md","mtime":"2022-02-11T19:28:57.936Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-11T19:32:21.394Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
