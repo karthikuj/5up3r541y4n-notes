@@ -20,7 +20,7 @@
         - `c` - character special device file
         - `l` - symbolic link
     - We can use the `-name` flag to find files that match that name or pattern
-    - We can use the `size` flag to find files that are larger, smaller or equal to the specified size. A leading `+` size indicates larger, `-` indicates smaller and no sign indicates exact match. The trailing character indicates the unit of measurement. Unit symbols:
+    - We can use the `-size` flag to find files that are larger, smaller or equal to the specified size. A leading `+` size indicates larger, `-` indicates smaller and no sign indicates exact match. The trailing character indicates the unit of measurement. Unit symbols:
         - `b` - 512-byte blocks. This is the default if no unit is specified.
         - `c` - bytes
         - `w` - 2-byte words
@@ -69,7 +69,7 @@ Unix-like file system. This is needed when scanning DOS/Windows file systems and
 
 ## xargs - Build and execute command lines from standard input
 - This command takes input from stdin and turns it into an argument list for a specified command.
-- the xargs command has the `--null` (or `-0` ) option, which accepts null-separated input. Useful when we use `print0` in find command.
+- the xargs command has the `--null` (or `-0` ) option, which accepts null-separated input. Useful when we use `-print0` in find command.
 - Example:
     - `find ~ -type f -name 'foo*' -print | xargs ls -l`
 
