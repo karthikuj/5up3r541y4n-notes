@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Packaging systems · GitBook</title>
+        <title>Tasks and tools · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="2-storageMedia.html" />
+    <link rel="next" href="1-packagingSystems.html" />
     
     
-    <link rel="prev" href="./" />
+    <link rel="prev" href="../1-Basics/12-customizingOurPrompt.html" />
     
 
     </head>
@@ -288,7 +288,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2" data-path="./">
+        <li class="chapter active" data-level="2.2" data-path="./">
             
                 <a href="./">
             
@@ -302,7 +302,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="2.2.1" data-path="1-packagingSystems.html">
+        <li class="chapter " data-level="2.2.1" data-path="1-packagingSystems.html">
             
                 <a href="1-packagingSystems.html">
             
@@ -402,7 +402,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Packaging systems</a>
+        <a href="../.." >Tasks and tools</a>
     </h1>
 </div>
 
@@ -417,139 +417,13 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="manage-system-packages">Manage system packages</h1>
-<h2 id="major-packaging-system-families">Major packaging system families</h2>
+                                <h2 id="in-this-section-you-will-learn">In this section you will learn:</h2>
 <ul>
-<li>Debian style (<code>.deb</code>) - Debian, Ubuntu, Linux Mint, Raspbian</li>
-<li>Red Hat style (<code>.rpm</code>) - Fedora, CentOs, Red Hat, OpenSUSE</li>
-</ul>
-<h2 id="packaging-system-tools">Packaging system tools</h2>
-<ul>
-<li>Debian style:<ul>
-<li>Low level: <code>dpkg</code></li>
-<li>High level: <code>apt-get</code>, <code>apt</code>, <code>aptitude</code></li>
-</ul>
-</li>
-<li>Red Hat style:<ul>
-<li>Low level: <code>rpm</code></li>
-<li>High level: <code>yum</code>, <code>dnf</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="finding-a-package-in-a-repository">Finding a package in a repository</h2>
-<ul>
-<li>Debian:<ul>
-<li><code>apt-cache search &lt;searchString&gt;</code></li>
-<li><code>apt search &lt;searchString&gt;</code></li>
-</ul>
-</li>
-<li>Red Hat:<ul>
-<li><code>yum search &lt;searchString&gt;</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="installing-a-package-from-a-repository">Installing a package from a repository</h2>
-<ul>
-<li>Debian:<ul>
-<li><code>apt-get install &lt;packageName&gt;</code></li>
-<li><code>apt install &lt;packageName&gt;</code></li>
-</ul>
-</li>
-<li>Red Hat:<ul>
-<li><code>yum install &lt;packageName&gt;</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="installing-package-from-a-package-file">Installing package from a package file</h2>
-<ul>
-<li>Debian:<ul>
-<li><code>dpkg -i &lt;packageFile&gt;</code></li>
-</ul>
-</li>
-<li>Red Hat:<ul>
-<li><code>rpm -i &lt;packageFile&gt;</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="removing-a-package">Removing a package</h2>
-<ul>
-<li>Debian:<ul>
-<li><code>apt-get remove &lt;packageName&gt;</code></li>
-<li><code>apt remove &lt;packageName&gt;</code></li>
-</ul>
-</li>
-<li>Red Hat:<ul>
-<li><code>yum erase &lt;packageName&gt;</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="updating-packages-from-a-repository">Updating packages from a repository</h2>
-<ul>
-<li>Debian:<ul>
-<li><code>apt-get update &amp;&amp; apt-get upgrade</code></li>
-<li><code>apt update &amp;&amp; apt upgrade</code></li>
-</ul>
-</li>
-<li>Red Hat:<ul>
-<li><code>yum update</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="upgrading-package-from-a-package-file">Upgrading package from a package file</h2>
-<ul>
-<li>Debian:<ul>
-<li><code>dpkg -i &lt;packageFile&gt;</code></li>
-</ul>
-</li>
-<li>Red Hat:<ul>
-<li><code>rpm -U &lt;packageFile&gt;</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="listing-installed-packages">Listing installed packages</h2>
-<ul>
-<li>Debian:<ul>
-<li><code>dpkg -l</code></li>
-</ul>
-</li>
-<li>Red Hat:<ul>
-<li><code>rpm -qa</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="determining-whether-a-package-is-installed">Determining whether a package is installed</h2>
-<ul>
-<li>Debian:<ul>
-<li><code>dpkg -s &lt;packageName&gt;</code></li>
-</ul>
-</li>
-<li>Red Hat:<ul>
-<li><code>rpm -q &lt;packageName&gt;</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="displaying-information-about-an-installed-package">Displaying information about an installed package</h2>
-<ul>
-<li>Debian:<ul>
-<li><code>apt-cache show &lt;packageName&gt;</code></li>
-<li><code>apt show &lt;packageName&gt;</code></li>
-</ul>
-</li>
-<li>Red Hat:<ul>
-<li><code>yum info &lt;packageName&gt;</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="finding-which-package-installed-a-file">Finding which package installed a file</h2>
-<ul>
-<li>Debian:<ul>
-<li><code>dpkg -S &lt;file&gt;</code></li>
-</ul>
-</li>
-<li>Red Hat:<ul>
-<li><code>rpm -qf &lt;file&gt;</code></li>
-</ul>
-</li>
+<li>How to install, remove and update packages in your system.</li>
+<li>Manage storage media.</li>
+<li>How to control the networks your system is connected to.</li>
+<li>Search for your files in the system.</li>
+<li>How to archive and backup your stuff.</li>
 </ul>
 
                                 
@@ -578,12 +452,12 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Tasks and tools">
+                <a href="../1-Basics/12-customizingOurPrompt.html" class="navigation navigation-prev " aria-label="Previous page: Prompt cutomization">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="2-storageMedia.html" class="navigation navigation-next " aria-label="Next page: Storage media">
+                <a href="1-packagingSystems.html" class="navigation navigation-next " aria-label="Next page: Packaging systems">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -594,7 +468,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Packaging systems","level":"2.2.1","depth":2,"next":{"title":"Storage media","level":"2.2.2","depth":2,"path":"Linux/2-TasksAndTools/2-storageMedia.md","ref":"./Linux/2-TasksAndTools/2-storageMedia.md","articles":[]},"previous":{"title":"Tasks and tools","level":"2.2","depth":1,"path":"Linux/2-TasksAndTools/README.md","ref":"./Linux/2-TasksAndTools/README.md","articles":[{"title":"Packaging systems","level":"2.2.1","depth":2,"path":"Linux/2-TasksAndTools/1-packagingSystems.md","ref":"./Linux/2-TasksAndTools/1-packagingSystems.md","articles":[]},{"title":"Storage media","level":"2.2.2","depth":2,"path":"Linux/2-TasksAndTools/2-storageMedia.md","ref":"./Linux/2-TasksAndTools/2-storageMedia.md","articles":[]},{"title":"Networking","level":"2.2.3","depth":2,"path":"Linux/2-TasksAndTools/3-networking.md","ref":"./Linux/2-TasksAndTools/3-networking.md","articles":[]},{"title":"Searching for files","level":"2.2.4","depth":2,"path":"Linux/2-TasksAndTools/4-searchForFiles.md","ref":"./Linux/2-TasksAndTools/4-searchForFiles.md","articles":[]},{"title":"Archiving and backup","level":"2.2.5","depth":2,"path":"Linux/2-TasksAndTools/5-archivingAndBackup.md","ref":"./Linux/2-TasksAndTools/5-archivingAndBackup.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapsible-chapters","livereload"],"pluginsConfig":{"collapsible-chapters":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Linux/2-TasksAndTools/1-packagingSystems.md","mtime":"2022-02-12T18:10:52.539Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-12T18:12:26.816Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Tasks and tools","level":"2.2","depth":1,"next":{"title":"Packaging systems","level":"2.2.1","depth":2,"path":"Linux/2-TasksAndTools/1-packagingSystems.md","ref":"./Linux/2-TasksAndTools/1-packagingSystems.md","articles":[]},"previous":{"title":"Prompt cutomization","level":"2.1.12","depth":2,"path":"Linux/1-Basics/12-customizingOurPrompt.md","ref":"./Linux/1-Basics/12-customizingOurPrompt.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapsible-chapters","livereload"],"pluginsConfig":{"collapsible-chapters":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Linux/2-TasksAndTools/README.md","mtime":"2022-02-12T18:10:52.539Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-12T18:12:26.816Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

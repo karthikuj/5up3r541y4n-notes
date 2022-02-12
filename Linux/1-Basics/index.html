@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Exploring · GitBook</title>
+        <title>Basics · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="2-navigation.html" />
+    <link rel="next" href="1-exploring.html" />
     
     
-    <link rel="prev" href="./" />
+    <link rel="prev" href="../../" />
     
 
     </head>
@@ -113,7 +113,7 @@
         
         
     
-        <li class="chapter " data-level="2.1" data-path="./">
+        <li class="chapter active" data-level="2.1" data-path="./">
             
                 <a href="./">
             
@@ -127,7 +127,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="2.1.1" data-path="1-exploring.html">
+        <li class="chapter " data-level="2.1.1" data-path="1-exploring.html">
             
                 <a href="1-exploring.html">
             
@@ -402,7 +402,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Exploring</a>
+        <a href="../.." >Basics</a>
     </h1>
 </div>
 
@@ -417,63 +417,19 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="exploring-the-filesystem">Exploring the filesystem</h1>
-<h2 id="file-command">file command</h2>
+                                <h2 id="in-this-section-you-will-learn">In this section you will learn:</h2>
 <ul>
-<li>In Linux file extensions don&apos;t mean anything, you could name <code>.txt</code> file <code>image.jpeg</code> and it would still work.</li>
-<li>So how do we identify what type of file it really is? This is where file command comes in.</li>
-<li>Usage: <code>file pathToFile</code></li>
-<li>Example:<ul>
-<li><code>file ~/Pictures/thousandYearsOfPain.jpeg</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="less">less</h2>
-<ul>
-<li>Very frequently we feel the need to check the contents of the file. We can go ahead and open it in a GUI text editor, but that is not the linux way.</li>
-<li>Usage: <code>less pathToFile</code></li>
-<li>Subcommands:<ul>
-<li><code>q</code> (Quit)</li>
-<li><code>PAGE UP</code> or <code>b</code> (Scroll back one page)</li>
-<li><code>PAGE DOWN</code> or <code>space</code> (Scroll forward one page)</li>
-<li><code>Up arrow</code> (Scroll up one line)</li>
-<li><code>Down arrow</code> (Scroll down one line)</li>
-<li><code>G</code> (Move to the end of the text file)</li>
-<li><code>1G</code> or <code>g</code> (Move to the beginning of the text file)</li>
-<li><code>/characters</code> (Search forward to the next occurrence of characters)</li>
-<li><code>n</code> (Search for the next occurrence of the previous search)</li>
-<li><code>h</code> (Display help screen)</li>
-<li><code>q</code> (Quit)</li>
-</ul>
-</li>
-<li>Less is more</li>
-</ul>
-<h2 id="symbolic-links">Symbolic links</h2>
-<ul>
-<li>When viewed in long list (<code>ll</code>) symbolic links seem to have the filetype <code>l</code>.</li>
-<li>Symbolic links are just like pointer variables, but instead of pointing to a variable they point to a file.</li>
-<li>So the original file can now be referenced in two ways, either through the real file name or the name of the symlink.</li>
-<li>If you write something to the symbolic link, the referenced file is written to.</li>
-<li>When you delete a symbolic link, however, only the link is deleted, not the file itself. If the file is deleted before the symbolic link, the link will continue to exist but will point to nothing.</li>
-<li>Examples:<ul>
-<li><code>ln -s ninja.scroll secret/forbidden.jutsu</code></li>
-<li><code>ln -s acev2.txt ace.txt</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="hard-links">Hard links</h2>
-<ul>
-<li>By default, every file has a single hard link that gives the file its name.</li>
-<li>When we create a hard link, we create an additional directory entry for a file.</li>
-<li>Unlike a symbolic link, when you list a directory containing a hard link, you will see no special indication of the link.</li>
-<li>A hard link cannot reference a file outside its own file system. This means a link cannot reference a file that is not on the same disk partition as the link itself.</li>
-<li>A hard link may not reference a directory.</li>
-<li>If you write something to the hard link, the referenced file is written to.</li>
-<li>When a hard link is deleted, the link is removed, but the contents of the file itself continue to exist (that is, its space is not deallocated) until all links to the file are deleted.</li>
-<li>Examples:<ul>
-<li><code>ln momo dimsums</code></li>
-</ul>
-</li>
+<li>How to explore your system.</li>
+<li>How to navigate through your system.</li>
+<li>How to manipulate files and directories (copying, moving, deleting etc.).</li>
+<li>How to efficiently work with commands.</li>
+<li>How to combine commands to do powerful stuff.</li>
+<li>Advance keyboard tricks to make life easier.</li>
+<li>Manage file permissions.</li>
+<li>Manage all the processes running in your system.</li>
+<li>How to configure your environment.</li>
+<li>Master the most powerful text editor Vi.</li>
+<li>How to customize your prompt.</li>
 </ul>
 
                                 
@@ -502,12 +458,12 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Basics">
+                <a href="../../" class="navigation navigation-prev " aria-label="Previous page: Author">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="2-navigation.html" class="navigation navigation-next " aria-label="Next page: Navigation">
+                <a href="1-exploring.html" class="navigation navigation-next " aria-label="Next page: Exploring">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -518,7 +474,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Exploring","level":"2.1.1","depth":2,"next":{"title":"Navigation","level":"2.1.2","depth":2,"path":"Linux/1-Basics/2-navigation.md","ref":"./Linux/1-Basics/2-navigation.md","articles":[]},"previous":{"title":"Basics","level":"2.1","depth":1,"path":"Linux/1-Basics/README.md","ref":"./Linux/1-Basics/README.md","articles":[{"title":"Exploring","level":"2.1.1","depth":2,"path":"Linux/1-Basics/1-exploring.md","ref":"./Linux/1-Basics/1-exploring.md","articles":[]},{"title":"Navigation","level":"2.1.2","depth":2,"path":"Linux/1-Basics/2-navigation.md","ref":"./Linux/1-Basics/2-navigation.md","articles":[]},{"title":"Manipulating files and directories","level":"2.1.3","depth":2,"path":"Linux/1-Basics/3-manipulatingFilesAndDirectories.md","ref":"./Linux/1-Basics/3-manipulatingFilesAndDirectories.md","articles":[]},{"title":"Working with commands","level":"2.1.4","depth":2,"path":"Linux/1-Basics/4-workingWithCommands.md","ref":"./Linux/1-Basics/4-workingWithCommands.md","articles":[]},{"title":"Redirection","level":"2.1.5","depth":2,"path":"Linux/1-Basics/5-redirection.md","ref":"./Linux/1-Basics/5-redirection.md","articles":[]},{"title":"Expansions and quotes","level":"2.1.6","depth":2,"path":"Linux/1-Basics/6-expansionsAndQuotes.md","ref":"./Linux/1-Basics/6-expansionsAndQuotes.md","articles":[]},{"title":"Advance keyboard tricks","level":"2.1.7","depth":2,"path":"Linux/1-Basics/7-advanceKeyboardTricks.md","ref":"./Linux/1-Basics/7-advanceKeyboardTricks.md","articles":[]},{"title":"Permissions","level":"2.1.8","depth":2,"path":"Linux/1-Basics/8-permissions.md","ref":"./Linux/1-Basics/8-permissions.md","articles":[]},{"title":"Processes","level":"2.1.9","depth":2,"path":"Linux/1-Basics/9-processes.md","ref":"./Linux/1-Basics/9-processes.md","articles":[]},{"title":"Environment","level":"2.1.10","depth":2,"path":"Linux/1-Basics/10-environment.md","ref":"./Linux/1-Basics/10-environment.md","articles":[]},{"title":"Vi","level":"2.1.11","depth":2,"path":"Linux/1-Basics/11-vi.md","ref":"./Linux/1-Basics/11-vi.md","articles":[]},{"title":"Prompt cutomization","level":"2.1.12","depth":2,"path":"Linux/1-Basics/12-customizingOurPrompt.md","ref":"./Linux/1-Basics/12-customizingOurPrompt.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapsible-chapters","livereload"],"pluginsConfig":{"collapsible-chapters":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Linux/1-Basics/1-exploring.md","mtime":"2022-02-12T18:10:52.531Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-12T18:12:26.816Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Basics","level":"2.1","depth":1,"next":{"title":"Exploring","level":"2.1.1","depth":2,"path":"Linux/1-Basics/1-exploring.md","ref":"./Linux/1-Basics/1-exploring.md","articles":[]},"previous":{"title":"Author","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapsible-chapters","livereload"],"pluginsConfig":{"collapsible-chapters":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Linux/1-Basics/README.md","mtime":"2022-02-12T18:10:52.535Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-12T18:12:26.816Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
