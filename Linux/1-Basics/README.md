@@ -1,0 +1,12 @@
+## In this section you will learn:
+- How to explore your system.
+- How to navigate through your system.
+- How to manipulate files and directories (copying, moving, deleting etc.).
+- How to efficiently work with commands.
+- How to combine commands to do powerful stuff.
+- Advance keyboard tricks to make life easier.
+- Manage file permissions.
+- Manage all the processes running in your system.
+- How to configure your environment.
+- Master the most powerful text editor Vi.
+- How to customize your prompt.

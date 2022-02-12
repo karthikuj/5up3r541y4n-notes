@@ -4,7 +4,7 @@
 
 ## Linux
 
-### Basics
+* [Basics](./Linux/1-Basics/README.md)
   * [Exploring](./Linux/1-Basics/1-exploring.md)
   * [Navigation](./Linux/1-Basics/2-navigation.md)
   * [Manipulating files and directories](./Linux/1-Basics/3-manipulatingFilesAndDirectories.md)
@@ -18,7 +18,7 @@
   * [Vi](./Linux/1-Basics/11-vi.md)
   * [Prompt cutomization](./Linux/1-Basics/12-customizingOurPrompt.md)
 
-### Tasks and tools
+* [Tasks and tools](./Linux/2-TasksAndTools/README.md)
   * [Packaging systems](./Linux/2-TasksAndTools/1-packagingSystems.md)
   * [Storage media](./Linux/2-TasksAndTools/2-storageMedia.md)
   * [Networking](./Linux/2-TasksAndTools/3-networking.md)
