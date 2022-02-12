@@ -481,6 +481,16 @@
 </li>
 </ul>
 <h2 id="rsync">rsync</h2>
+<ul>
+<li>This program can synchronize both local and remote directories by using the rsync remote-update protocol, which allows rsync to quickly detect the differences between two directories and perform the minimum amount of copying required to bring them into sync.</li>
+<li>Usage: <code>rsync [OPTIONS] source destination</code></li>
+<li>Either the source or destination should be local, remote to remote is not supported.</li>
+<li>Examples:<ul>
+<li><code>sudo rsync -av --delete /etc /home /usr/local /media/BigDisk/backup</code></li>
+<li><code>rsync -av &#x2013;delete rsync://archive.linux.duke.edu/fedora/linux/development/rawhide/Everything/x86_64/os/ fedora-devel</code></li>
+</ul>
+</li>
+</ul>
 
                                 
                                 </section>
@@ -520,7 +530,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Archiving and backup","level":"4.5","depth":1,"previous":{"title":"Searching for files","level":"4.4","depth":1,"path":"Linux/2-TasksAndTools/4-searchForFiles.md","ref":"./Linux/2-TasksAndTools/4-searchForFiles.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Linux/2-TasksAndTools/5-archivingAndBackup.md","mtime":"2022-02-11T19:28:57.936Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-11T19:32:21.394Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Archiving and backup","level":"4.5","depth":1,"previous":{"title":"Searching for files","level":"4.4","depth":1,"path":"Linux/2-TasksAndTools/4-searchForFiles.md","ref":"./Linux/2-TasksAndTools/4-searchForFiles.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Linux/2-TasksAndTools/5-archivingAndBackup.md","mtime":"2022-02-12T17:20:06.460Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-12T17:20:58.182Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
