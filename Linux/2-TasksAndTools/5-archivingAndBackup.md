@@ -71,3 +71,9 @@
     - `unzip test.zip`
 
 ## rsync
+- This program can synchronize both local and remote directories by using the rsync remote-update protocol, which allows rsync to quickly detect the differences between two directories and perform the minimum amount of copying required to bring them into sync.
+- Usage: `rsync [OPTIONS] source destination`
+- Either the source or destination should be local, remote to remote is not supported.
+- Examples:
+    - `sudo rsync -av --delete /etc /home /usr/local /media/BigDisk/backup`
+    - `rsync -av –delete rsync://archive.linux.duke.edu/fedora/linux/development/rawhide/Everything/x86_64/os/ fedora-devel`
