@@ -24,6 +24,7 @@
   * [Networking](./Linux/2-TasksAndTools/3-networking.md)
   * [Searching for files](./Linux/2-TasksAndTools/4-searchForFiles.md)
   * [Archiving and backup](./Linux/2-TasksAndTools/5-archivingAndBackup.md)
+  * [Regular Expressions](./Linux/2-TasksAndTools/6-regularExpressions.md)
 
 ## Web
 
