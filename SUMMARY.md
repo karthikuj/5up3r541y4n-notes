@@ -24,3 +24,15 @@
   * [Networking](./Linux/2-TasksAndTools/3-networking.md)
   * [Searching for files](./Linux/2-TasksAndTools/4-searchForFiles.md)
   * [Archiving and backup](./Linux/2-TasksAndTools/5-archivingAndBackup.md)
+
+## Web
+
+* [Server Side](./Web/ServerSideTopics/README.md)
+  * [Access Control Flaws](./Web/ServerSideTopics/AccessControl.md)
+  * [Authentication Flaws](./Web/ServerSideTopics/AuthenticationFlaws.md)
+  * [Directory Traversal](./Web/ServerSideTopics/DirectoryTraversal.md)
+  * [Information Disclosure](./Web/ServerSideTopics/InformationDisclosure.md)
+  * [OS Command Injection](./Web/ServerSideTopics/OS-Command-Injection.md)
+  * [SQL Injection](./Web/ServerSideTopics/SQLI.md)
+  * [Server Side Request Forgery](./Web/ServerSideTopics/SSRF.md)
+  * [XML External Entities](./Web/ServerSideTopics/XXE.md)
