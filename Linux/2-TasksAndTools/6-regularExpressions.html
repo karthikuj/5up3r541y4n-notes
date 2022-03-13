@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Storage media · GitBook</title>
+        <title>Regular Expressions · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="3-networking.html" />
+    <link rel="next" href="../../Web/ServerSideTopics/" />
     
     
-    <link rel="prev" href="1-packagingSystems.html" />
+    <link rel="prev" href="5-archivingAndBackup.html" />
     
 
     </head>
@@ -315,7 +315,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.2.2" data-path="2-storageMedia.html">
+        <li class="chapter " data-level="2.2.2" data-path="2-storageMedia.html">
             
                 <a href="2-storageMedia.html">
             
@@ -367,7 +367,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2.6" data-path="6-regularExpressions.html">
+        <li class="chapter active" data-level="2.2.6" data-path="6-regularExpressions.html">
             
                 <a href="6-regularExpressions.html">
             
@@ -545,7 +545,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Storage media</a>
+        <a href="../.." >Regular Expressions</a>
     </h1>
 </div>
 
@@ -560,110 +560,192 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="managing-storage-media">Managing storage media</h1>
-<h2 id="mount---mount-a-file-system">mount - Mount a file system</h2>
+                                <h1 id="match-patterns-like-a-pro">Match patterns like a pro</h1>
+<p>Regex or regular expressions are a way to match patterns in text, it is kind of like a language. The reason it is an important part of linux is that many programs in linux use regular experessions and by learning them you can become an advanced user.</p>
+<h2 id="metacharacters">Metacharacters</h2>
 <ul>
-<li>The process of attaching a storage device to the file system tree is called mounting.</li>
-<li>Usage: <code>mount &lt;device&gt; &lt;mountPoint&gt;</code></li>
-<li>A file named <code>/etc/fstab</code> (short for file system table) lists the devices that are to be mounted at boot time.</li>
-<li>View a list of mounted file systems: <code>mount</code></li>
-<li>Use the <code>-t</code> flag to specify the file system type.</li>
+<li>These are some special characters used in regular expressions to match complex patterns.</li>
+<li>Some of these metacharacters are: <code>^</code>, <code>$</code>, <code>.</code>, <code>[ ]</code>, <code>{ }</code>, <code>-</code>, <code>?</code>, <code>+</code>, <code>*</code>, <code>( )</code>, <code>|</code>, <code>\</code> etc.</li>
+<li>Moving on we&apos;ll learn about these metacharacters one by one.</li>
+</ul>
+<h2 id="the-caret--sign">The caret (<code>^</code>) sign</h2>
+<ul>
+<li>It is used to match the start of a line.</li>
+<li>For example if we want to match the line that starts with &quot;Because&quot;, we can do this:<ul>
+<li><code>^Because</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="the-dollar--sign">The dollar (<code>$</code>) sign</h2>
+<ul>
+<li>It is used to match the end of the line.</li>
+<li>For example if we want to match the line that ends with &quot;bye&quot;, we can do this:<ul>
+<li><code>bye$</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="match-anything-using-">Match anything using (<code>.</code>)</h2>
+<ul>
+<li>So the <code>.</code> character in regular expression can match any other character.</li>
+<li>For example if you are matching 3 letter words starting with &quot;ma&quot;, like &quot;man&quot;, &quot;map&quot;, &quot;mam&quot;, &quot;may&quot;, &quot;mac&quot; etc. We can do this:<ul>
+<li><code>ma.</code></li>
+</ul>
+</li>
+<li>To be honest a better way to search for 3 letter words starting with &quot;ma&quot;, would be this:<ul>
+<li><code>\bma.\b</code></li>
+</ul>
+</li>
+<li><code>\b</code> matches the beginning or end of a word.</li>
+</ul>
+<h2 id="create-character-classes---and-specify-ranges--">Create character classes (<code>[ ]</code>) and specify ranges (<code>-</code>)</h2>
+<ul>
+<li>Character classes are a way to match a character from the given list of characters.</li>
+<li>For example:<ul>
+<li><code>[bch]atman</code> can match &quot;batman&quot;, &quot;catman&quot; or &quot;hatman&quot;</li>
+</ul>
+</li>
+<li>The above regular expression does not match &quot;bcfatman&quot; as beginners sometimes misunderstand.</li>
+<li>You can also give ranges for the character classes using hyphen.</li>
+<li>Pre-built character classes:<ul>
+<li><code>\d</code> - Matches any digit <code>[0-9]</code>.</li>
+<li><code>\D</code> - Matches everything except digit <code>[^0-9]</code>.</li>
+<li><code>\w</code> - Matches any character, digit or underscore <code>[a-zA-Z0-9_]</code>.</li>
+<li><code>\W</code> - Matches everything except character, digit or underscore <code>[^a-zA-Z0-9_]</code>.</li>
+<li><code>\s</code> - Matches space, tab, carriage return, line feed or form feed. <code>[ \t\r\n\f]</code>.</li>
+<li><code>\S</code> - Matches everything except space, tab, carriage return or form feed <code>[^ \t\r\n\f]</code>.</li>
+</ul>
+</li>
 <li>Examples:<ul>
-<li><code>mount</code></li>
-<li><code>mount /dev/sdb1 /mnt/myUSB</code></li>
-<li><code>mount -t iso9660 /dev/sdc /mnt/cdrom</code></li>
+<li><code>[a-zA-Z0-9]</code></li>
+<li><code>[a-z0-9]</code></li>
+<li><code>[A-H]atman</code></li>
+<li><code>[a-z\-]</code> - Matches lowercase characters and hyphen (<code>-</code>)</li>
 </ul>
 </li>
 </ul>
-<h2 id="umount---umount-a-file-system">umount - Umount a file system</h2>
+<h2 id="match-a-number-of-characters-at-a-time--">Match a number of characters at a time (<code>{ }</code>)</h2>
 <ul>
-<li>The process of detaching the storage media from the file system tree is called unmounting.</li>
-<li>Usage: <code>umount &lt;device&gt;</code></li>
-<li>Always remember to umount your devices because, unmounting a device entails writing all the remaining data to the device so that it can be safely removed.</li>
-<li>Example:<ul>
-<li><code>umount /dev/sdb1</code></li>
+<li>You can match some pattern a minimum, maximum or fixed number of times using braces.</li>
+<li>Let&apos;s create a regex for an IP address.</li>
+<li>An IP address is of the format: <ul>
+<li>someNumberBetween0-255.someNumberBetween0-255.someNumberBetween0-255.someNumberBetween0-255</li>
+</ul>
+</li>
+<li>So we can say in regex it is:<ul>
+<li>[0-9] (minimum 1 to maximum 3), yes it will include numbers out the range 0-255 but let&apos;s get to that later.</li>
+<li>So we can write the above expression as <code>\d{1,3}</code></li>
+<li>After the number we have a full stop but we need to escape it since fullstop is a metacharacter in regex.<ul>
+<li>So it becomes <code>\d{1,3}\.</code></li>
+</ul>
+</li>
+<li>Now we can to repeat this whole pattern 3 times, so it becomes:<ul>
+<li><code>(\d{1,3}\.){3}</code> Here we grouped the whole previous pattern using <code>()</code>, we&apos;ll learn about it later.</li>
+</ul>
+</li>
+<li>Now at last their is one more number which can be minimum 1 digit to maximum 3 digits.<ul>
+<li><code>(\d{1,3}\.){3}\d{1,3}</code></li>
 </ul>
 </li>
 </ul>
-<h2 id="check-all-devices">Check all devices</h2>
-<ul>
-<li>You can check all the devices by listing the <code>/dev</code> directory.</li>
+</li>
+<li>Now if we want to be strict with the 0-255 range we can do something like this:<ul>
+<li><code>((1?\d{1,2}|2[0-5]{2})\.){3}(1?\d{1,2}|2[0-5]{2})</code></li>
 </ul>
-<h2 id="tip">TIP</h2>
-<ul>
-<li>Using the <code>tail -f /var/log/messages</code> technique is a great way to watch what the system is doing in near real-time.</li>
+</li>
 </ul>
-<h2 id="fdisk---manipulate-disk-partition-table">fdisk - Manipulate disk partition table</h2>
+<h2 id="match-zero-or-one-times-">Match zero or one times (<code>?</code>)</h2>
 <ul>
-<li>fdisk allows us to interact directly with disk-like devices at a very low level.</li>
-<li>Usage: <code>fdisk [arguments] [device]</code></li>
-<li>To view all devices: <code>sudo fdisk -l</code></li>
-<li>Unmount your device before working on it with fdisk.</li>
-<li>To see a list of the available partition types use <code>l</code> command after entering fdisk interactive mode.</li>
-<li>To change a partition&apos;s system id use <code>t</code> command in interactive mode.</li>
-<li>To write the changes use <code>w</code> command in interactive mode.</li>
+<li>You can match a character zero or one time using <code>?</code>, it is helpful when a character may or may not exist in string.</li>
+<li>For example if we want to match a phone number it may or may not have <code>+</code> symbol in the beginning:<ul>
+<li><code>\+?91-\d{10}</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="match-one-or-more-times-">Match one or more times (<code>+</code>)</h2>
+<ul>
+<li>You can match a character one or more times using <code>+</code>, it is helpful when you want the character to be matched atleast once.</li>
+<li>So if we want to match &quot;Baby shark do do do do...&quot;, we can do this:</li>
+<li><code>Baby shark (do\s?)+</code></li>
+</ul>
+<h2 id="match-zero-or-more-times-">Match zero or more times (<code>*</code>)</h2>
+<ul>
+<li>You can match a character zero or more times using <code>*</code>.</li>
+<li>Example if we want to match any tag in html, we can do this:<ul>
+<li><code>&lt;.*&gt;</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="grouping--">Grouping (<code>( )</code>)</h2>
+<ul>
+<li>We can group parts of our regex to specify the number of times they should be matched or to output the groups seperately (possible in many programming languages).</li>
+<li>Like in the IP address example we looked before we grouped parts of it to match them a specific number of times using braces <code>{ }</code></li>
 <li>Examples:<ul>
-<li><code>sudo fdisk /dev/sdb</code></li>
+<li><code>((1?\d{1,2}|2[0-5]{2})\.){3}(1?\d{1,2}|2[0-5]{2})</code></li>
+<li><code>Baby shark (do\s?)+</code></li>
 </ul>
 </li>
 </ul>
-<h2 id="mkfs---create-a-file-system">mkfs - Create a file system</h2>
+<h2 id="or-operator-">Or operator (<code>|</code>)</h2>
 <ul>
-<li>mkfs is short for make file system, it can create file systems in a variety of formats.</li>
-<li>Usage: <code>mkfs [arguments] [device]</code></li>
-<li>Use the <code>-t</code> flag to specify system type.</li>
+<li>This is used when one of the specified pattern/string may be present but we&apos;re not sure which one.</li>
+<li>Example:<ul>
+<li><code>bat(man|woman)</code> - This will match &quot;batman&quot; or &quot;batwoman&quot;</li>
+</ul>
+</li>
+<li>The above example can also be done like this:<ul>
+<li><code>bat(wo)?man</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="escape-character-">Escape character (<code>\</code>)</h2>
+<ul>
+<li>Many times we want to use characters like <code>+</code>, <code>*</code>, <code>?</code>, <code>$</code> or <code>^</code> as normal characters in our regex.</li>
+<li>To do that we can use <code>\</code> to escape those metacharacters.</li>
+<li>Example:<ul>
+<li><code>\+1 \(\d{3}\) \d{3}\-\d{4}</code> - Matches US phone numbers</li>
+</ul>
+</li>
+</ul>
+<h2 id="negation-">Negation (<code>^</code>)</h2>
+<ul>
+<li>When the caret symbol is used with character classes, it negates that character class.</li>
+<li>Example:<ul>
+<li><code>[^A-Z]</code> - Matches everything except uppercase alphabets.</li>
+</ul>
+</li>
+</ul>
+<h2 id="grep---global-regular-expression-print">grep - global regular expression print</h2>
+<ul>
+<li>This is a program that can use regular expression to find patterns in files.</li>
+<li>Usage: <code>grep [OPTIONS] &lt;pattern&gt; [FILE...]</code></li>
+<li>Use the <code>-i</code> or <code>--ignore-case</code> flag to do a case-insensitive match.</li>
+<li>Use the <code>-v</code> or <code>--invert-match</code> flag to print lines without the pattern.</li>
+<li>Use the <code>-l</code> flag to only output file name of match.</li>
+<li>Use the <code>-c</code> flag for count of matches.</li>
+<li>Use the <code>-n</code> flag for number of line match was found on.</li>
+<li>Use the <code>-P</code> flag for perl style regex use.</li>
+<li>Use the <code>-r</code> flag for recursive search inside a directory.</li>
+<li>Use the <code>-o</code> flag to output only what matched.</li>
 <li>Examples:<ul>
-<li><code>sudo mkfs -t ext4 /dev/sdb1</code></li>
-<li><code>sudo mkfs -t vfat /dev/sdb1</code></li>
+<li><code>grep -Pn &quot;Baby shark (do\s?)+&quot; babyShark.lrc</code></li>
+<li><code>grep -ron &quot;John Doe&quot; ./dir/</code></li>
+<li><code>grep -Pic &quot;Bat(wo)?man&quot; batmanChronicles.script</code></li>
 </ul>
 </li>
 </ul>
-<h2 id="fsck---check-and-repair-system">fsck - Check and repair system</h2>
+<h2 id="find-command">find command</h2>
 <ul>
-<li>It stands for &quot;file system check&quot; and is used to check the integrity of file systems and repair corrupt file systems.</li>
-<li>Usage: <code>sudo fsck [arguments] [device]</code></li>
+<li>You can use the <code>-regex</code> flag in <code>find</code> command to do pattern matching.</li>
 <li>Example:<ul>
-<li><code>sudo fsck /dev/sdb1</code></li>
+<li><code>find . -regex &apos;.*[^-_./0-9a-zA-Z].*&apos;</code></li>
 </ul>
 </li>
 </ul>
-<h2 id="dd---convert-and-copy-a-file">dd - Convert and copy a file</h2>
+<h2 id="locate-command">locate command</h2>
 <ul>
-<li>It copies blocks of data from one place to another. So it can be used to clone devices.</li>
-<li>Usage: <code>dd if=&lt;input_file&gt; of=&lt;output_file&gt; [bs=&lt;block_size&gt; [count=&lt;blocks&gt;]]</code></li>
+<li>You can use the <code>--regex</code> flag in <code>locate</code> command to do pattern matching.</li>
 <li>Example:<ul>
-<li><code>dd if=/dev/sdb1 of=/home/carlos/flashDrive.iso</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="genisoimage-mkisofs---create-an-iso-9660-image-file">genisoimage (mkisofs) - Create an ISO 9660 image file</h2>
-<ul>
-<li>To create an ISO image file containing the contents of a directory, we use the genisoimage program.</li>
-<li>Usage: <code>genisoimage -o &lt;outputFile&gt; -R -J &lt;directory&gt;</code></li>
-<li>Example:<ul>
-<li><code>genisoimage -o cd-rom.iso -R -J ~/cd-rom-files</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="wodim-cdrecord---write-data-to-optical-storage-media">wodim (cdrecord) - Write data to optical storage media</h2>
-<ul>
-<li>Blank out a CD-RW device: <code>wodim dev=/dev/cdrw blank=fast</code></li>
-<li>Write an image into it: <code>wodim dev=/dev/cdrw image.iso</code></li>
-</ul>
-<h2 id="md5sum---calculate-an-md5-checksum">md5sum - Calculate an MD5 checksum</h2>
-<ul>
-<li>Used to calculate the MD5 checksum of a file.</li>
-<li>Usage: <code>md5sum &lt;file&gt;</code></li>
-<li>Examples: <code>md5sum secretFile.txt</code></li>
-</ul>
-<h2 id="df---disk-free">df - disk free</h2>
-<ul>
-<li>It is used to check the total and available space.</li>
-<li>Usage: <code>df [options]</code></li>
-<li>Use the <code>-h</code> flag to view the space in human readable format.</li>
-<li>Example:<ul>
-<li><code>df</code></li>
-<li><code>df -h</code></li>
+<li><code>locate --regex &apos;bin/(bz|gz|zip)&apos;</code></li>
 </ul>
 </li>
 </ul>
@@ -694,12 +776,12 @@
 
             
                 
-                <a href="1-packagingSystems.html" class="navigation navigation-prev " aria-label="Previous page: Packaging systems">
+                <a href="5-archivingAndBackup.html" class="navigation navigation-prev " aria-label="Previous page: Archiving and backup">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="3-networking.html" class="navigation navigation-next " aria-label="Next page: Networking">
+                <a href="../../Web/ServerSideTopics/" class="navigation navigation-next " aria-label="Next page: Server Side">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -710,7 +792,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Storage media","level":"2.2.2","depth":2,"next":{"title":"Networking","level":"2.2.3","depth":2,"path":"Linux/2-TasksAndTools/3-networking.md","ref":"./Linux/2-TasksAndTools/3-networking.md","articles":[]},"previous":{"title":"Packaging systems","level":"2.2.1","depth":2,"path":"Linux/2-TasksAndTools/1-packagingSystems.md","ref":"./Linux/2-TasksAndTools/1-packagingSystems.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapsible-chapters","livereload"],"pluginsConfig":{"collapsible-chapters":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Linux/2-TasksAndTools/2-storageMedia.md","mtime":"2022-02-12T18:10:52.539Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-13T09:45:48.513Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Regular Expressions","level":"2.2.6","depth":2,"next":{"title":"Server Side","level":"3.1","depth":1,"path":"Web/ServerSideTopics/README.md","ref":"./Web/ServerSideTopics/README.md","articles":[{"title":"Access Control Flaws","level":"3.1.1","depth":2,"path":"Web/ServerSideTopics/AccessControl.md","ref":"./Web/ServerSideTopics/AccessControl.md","articles":[]},{"title":"Authentication Flaws","level":"3.1.2","depth":2,"path":"Web/ServerSideTopics/AuthenticationFlaws.md","ref":"./Web/ServerSideTopics/AuthenticationFlaws.md","articles":[]},{"title":"Directory Traversal","level":"3.1.3","depth":2,"path":"Web/ServerSideTopics/DirectoryTraversal.md","ref":"./Web/ServerSideTopics/DirectoryTraversal.md","articles":[]},{"title":"Information Disclosure","level":"3.1.4","depth":2,"path":"Web/ServerSideTopics/InformationDisclosure.md","ref":"./Web/ServerSideTopics/InformationDisclosure.md","articles":[]},{"title":"OS Command Injection","level":"3.1.5","depth":2,"path":"Web/ServerSideTopics/OS-Command-Injection.md","ref":"./Web/ServerSideTopics/OS-Command-Injection.md","articles":[]},{"title":"SQL Injection","level":"3.1.6","depth":2,"path":"Web/ServerSideTopics/SQLI.md","ref":"./Web/ServerSideTopics/SQLI.md","articles":[]},{"title":"Server Side Request Forgery","level":"3.1.7","depth":2,"path":"Web/ServerSideTopics/SSRF.md","ref":"./Web/ServerSideTopics/SSRF.md","articles":[]},{"title":"XML External Entities","level":"3.1.8","depth":2,"path":"Web/ServerSideTopics/XXE.md","ref":"./Web/ServerSideTopics/XXE.md","articles":[]}]},"previous":{"title":"Archiving and backup","level":"2.2.5","depth":2,"path":"Linux/2-TasksAndTools/5-archivingAndBackup.md","ref":"./Linux/2-TasksAndTools/5-archivingAndBackup.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapsible-chapters","livereload"],"pluginsConfig":{"collapsible-chapters":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Linux/2-TasksAndTools/6-regularExpressions.md","mtime":"2022-03-13T09:38:57.704Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-13T09:45:48.513Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
